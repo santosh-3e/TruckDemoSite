@@ -1,0 +1,24 @@
+﻿$(document).ready(function () {
+    LoadingDashboard();
+});
+
+
+function LoadingDashboard() {
+    
+    var url = "realtimechart.aspx";
+    $.ajax({
+        url: url,
+        type: 'GET',
+        dataType: "html",
+        error: function (jqXHR, textStatus, errorThrown) {
+            return $('#jsonp-results').html("Error: something went wrong - " + textStatus);
+        },
+        success: function (data, textStatus, jqXHR) {
+            var d = new Date();
+            $('#status').html("Refreshed at : " + d.toLocaleString());
+            return $('#chart1').html(data);
+        }
+    });
+
+    setTimeout(LoadingDashboard, 1000);
+}

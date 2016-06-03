@@ -1,0 +1,879 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{B9129317-5308-442D-8624-30CE0A807C56}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>TrafficVisualization</RootNamespace>
+    <AssemblyName>TrafficVisualization</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <WebGreaseLibPath>..\packages\WebGrease.1.5.2\lib</WebGreaseLibPath>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+    <UseGlobalApplicationHostFile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Antlr3.Runtime">
+      <HintPath>..\packages\Antlr.3.4.1.9004\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="AutoMapper">
+      <HintPath>..\..\TruckDemo\packages\AutoMapper.3.3.1\lib\net40\AutoMapper.dll</HintPath>
+    </Reference>
+    <Reference Include="AutoMapper.Net4">
+      <HintPath>..\..\TruckDemo\packages\AutoMapper.3.3.1\lib\net40\AutoMapper.Net4.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNet.Highcharts">
+      <HintPath>..\packages\DotNet.Highcharts.4.0\lib\DotNet.Highcharts.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework">
+      <HintPath>..\..\TruckDemo\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\..\TruckDemo\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.HBase.Client">
+      <HintPath>..\packages\Microsoft.HBase.Client.0.2.1\lib\net45\Microsoft.HBase.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Common, Version=5.0.505.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EnterpriseLibrary.Common.5.0.505.0\lib\NET35\Microsoft.Practices.EnterpriseLibrary.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.WindowsAzure.TransientFaultHandling">
+      <HintPath>..\packages\EnterpriseLibrary.WindowsAzure.TransientFaultHandling.5.1.1212.0\lib\NET4\Microsoft.Practices.EnterpriseLibrary.WindowsAzure.TransientFaultHandling.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.ServiceLocation">
+      <HintPath>..\packages\CommonServiceLocator.1.0\lib\NET35\Microsoft.Practices.ServiceLocation.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.TransientFaultHandling.Core">
+      <HintPath>..\packages\TransientFaultHandling.Core.5.1.1209.0\lib\NET4\Microsoft.Practices.TransientFaultHandling.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity, Version=2.1.505.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Unity.2.1.505.0\lib\NET35\Microsoft.Practices.Unity.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity.Configuration">
+      <HintPath>..\packages\Unity.2.1.505.0\lib\NET35\Microsoft.Practices.Unity.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity.Interception">
+      <HintPath>..\packages\Unity.Interception.2.1.505.0\lib\NET35\Microsoft.Practices.Unity.Interception.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity.Interception.Configuration">
+      <HintPath>..\packages\Unity.Interception.2.1.505.0\lib\NET35\Microsoft.Practices.Unity.Interception.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Newtonsoft.Json.6.0.5\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="protobuf-net">
+      <HintPath>..\packages\protobuf-net.2.0.0.668\lib\net40\protobuf-net.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Net.Http.Formatting, Version=5.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.0.0\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Http, Version=5.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.0.0\lib\net45\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=5.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.0.0\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="WebGrease">
+      <HintPath>..\packages\WebGrease.1.5.2\lib\WebGrease.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Images\eyera-logo-2.jpg" />
+    <Content Include="Images\eyera-small-white.png" />
+    <Content Include="Images\eyera-small.png" />
+    <Content Include="Scripts\bootstrap-growl.min.js" />
+    <Content Include="bingmap.aspx" />
+    <Content Include="Content\bootstrap-switch.min.css" />
+    <Content Include="Content\bootstrap-theme-new.min.css" />
+    <Content Include="Content\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap-theme.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\custom.css" />
+    <Content Include="Content\weather-icons.css" />
+    <Content Include="Content\weather-icons.min.css" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\bootstrap-theme.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Default.Master" />
+    <Content Include="fonts\weathericons-regular-webfont.eot" />
+    <Content Include="fonts\weathericons-regular-webfont.ttf" />
+    <Content Include="fonts\weathericons-regular-webfont.woff" />
+    <Content Include="fonts\WeatherIcons-Regular.otf" />
+    <Content Include="assets\DataTables-1.10.0\bower.json" />
+    <Content Include="assets\DataTables-1.10.0\composer.json" />
+    <Content Include="assets\DataTables-1.10.0\Contributing.md" />
+    <Content Include="assets\DataTables-1.10.0\dataTables.jquery.json" />
+    <Content Include="assets\DataTables-1.10.0\examples\resources\examples.php" />
+    <Content Include="assets\DataTables-1.10.0\examples\resources\font\raleway_thin-webfont.eot" />
+    <Content Include="assets\DataTables-1.10.0\examples\resources\font\raleway_thin-webfont.ttf" />
+    <Content Include="assets\DataTables-1.10.0\examples\resources\font\raleway_thin-webfont.woff" />
+    <Content Include="assets\DataTables-1.10.0\examples\resources\jqueryui\dataTables.jqueryui.scss" />
+    <Content Include="assets\DataTables-1.10.0\examples\resources\syntax\Syntax Highlighter license" />
+    <Content Include="assets\DataTables-1.10.0\examples\server_side\scripts\ids-arrays.php" />
+    <Content Include="assets\DataTables-1.10.0\examples\server_side\scripts\ids-objects.php" />
+    <Content Include="assets\DataTables-1.10.0\examples\server_side\scripts\jsonp.php" />
+    <Content Include="assets\DataTables-1.10.0\examples\server_side\scripts\objects.php" />
+    <Content Include="assets\DataTables-1.10.0\examples\server_side\scripts\post.php" />
+    <Content Include="assets\DataTables-1.10.0\examples\server_side\scripts\server_processing.php" />
+    <Content Include="assets\DataTables-1.10.0\examples\server_side\scripts\ssp.class.php" />
+    <Content Include="assets\DataTables-1.10.0\extensions\Scroller\examples\data\ssp.php" />
+    <Content Include="assets\DataTables-1.10.0\extensions\TableTools\images\psd\collection.psd" />
+    <Content Include="assets\DataTables-1.10.0\extensions\TableTools\images\psd\copy document.psd" />
+    <Content Include="assets\DataTables-1.10.0\extensions\TableTools\images\psd\file_types.psd" />
+    <Content Include="assets\DataTables-1.10.0\extensions\TableTools\images\psd\printer.psd" />
+    <Content Include="assets\DataTables-1.10.0\media\images\Sorting icons.psd" />
+    <Content Include="assets\DataTables-1.10.0\package.json" />
+    <Content Include="assets\DataTables-1.10.0\Readme.md" />
+    <Content Include="assets\leaflet-plugins\.jshintrc" />
+    <Content Include="assets\leaflet-plugins\build\deps.py" />
+    <Content Include="assets\leaflet-plugins\build\Makefile" />
+    <Content Include="assets\leaflet-plugins\examples\fells_loop.gpx" />
+    <Content Include="assets\leaflet-plugins\examples\KML_Samples.kml" />
+    <Content Include="assets\leaflet-plugins\examples\speed.gpx" />
+    <Content Include="assets\leaflet-plugins\LICENSE" />
+    <Content Include="assets\leaflet-plugins\package.json" />
+    <Content Include="assets\leaflet-plugins\README.asciidoc" />
+    <Content Include="assets\nvd3\.jshintrc" />
+    <Content Include="assets\nvd3\bower.json" />
+    <Content Include="assets\nvd3\build.bat" />
+    <Content Include="assets\nvd3\examples\nations.json" />
+    <Content Include="assets\nvd3\LICENSE.md" />
+    <Content Include="assets\nvd3\Makefile" />
+    <Content Include="assets\nvd3\package.json" />
+    <Content Include="assets\nvd3\README.md" />
+    <None Include="Properties\PublishProfiles\iot-truck-demo - FTP.pubxml" />
+    <None Include="Properties\PublishProfiles\iot-truck-demo - Web Deploy.pubxml" />
+    <None Include="Properties\PublishProfiles\iot-truck-demo.pubxml" />
+    <None Include="Scripts\jquery-2.1.1.intellisense.js" />
+    <Content Include="fonts\weathericons-regular-webfont.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="Home.aspx" />
+    <Content Include="Images\Play.png" />
+    <Content Include="Images\play2.png" />
+    <Content Include="assets\app.css" />
+    <Content Include="assets\DataTables-1.10.0\examples\advanced_init\column_render.html" />
+    <Content Include="assets\DataTables-1.10.0\examples\advanced_init\complex_header.html" />
+    <Content Include="assets\DataTables-1.10.0\examples\advanced_init\defaults.html" />
+    <Content Include="assets\DataTables-1.10.0\examples\advanced_init\dom_multiple_elements.html" />
+    <Content Include="assets\DataTables-1.10.0\examples\advanced_init\dom_toolbar.html" />
+    <Content Include="assets\DataTables-1.10.0\examples\advanced_init\dt_events.html" />
+    <Content Include="assets\DataTables-1.10.0\examples\advanced_init\events_live.html" />
+    <Content Include="assets\DataTables-1.10.0\examples\advanced_init\footer_callback.html" />
+    <Content Include="assets\DataTables-1.10.0\examples\advanced_init\html5-data-attributes.html" />
+    <Content Include="assets\DataTables-1.10.0\examples\advanced_init\index.html" />
+    <Content Include="assets\DataTables-1.10.0\examples\advanced_init\language_file.html" />
+    <Content Include="assets\DataTables-1.10.0\examples\advanced_init\length_menu.html" />
+    <Content Include="assets\DataTables-1.10.0\examples\advanced_init\row_callback.html" />
+    <Content Include="assets\DataTables-1.10.0\examples\advanced_init\row_grouping.html" />
+    <Content Include="assets\DataTables-1.10.0\examples\advanced_init\sort_direction_control.html" />
+    <Content Include="assets\DataTables-1.10.0\examples\ajax\custom_data_flat.html" />
+    <Content Include="assets\DataTables-1.10.0\examples\ajax\custom_data_property.html" />
+    <Content Include="assets\DataTables-1.10.0\examples\ajax\data\arrays.txt" />
+    <Content Include="assets\DataTables-1.10.0\examples\ajax\data\arrays_custom_prop.txt" />
+    <Content Include="assets\DataTables-1.10.0\examples\ajax\data\arrays_subobjects.txt" />
+    <Content Include="assets\DataTables-1.10.0\examples\ajax\data\objects.txt" />
+    <Content Include="assets\DataTables-1.10.0\examples\ajax\data\objects_deep.txt" />
+    <Content Include="assets\DataTables-1.10.0\examples\ajax\data\objects_root_array.txt" />
+    <Content Include="assets\DataTables-1.10.0\examples\ajax\data\objects_subarrays.txt" />
+    <Content Include="assets\DataTables-1.10.0\examples\ajax\data\orthogonal.txt" />
+    <Content Include="assets\DataTables-1.10.0\examples\ajax\deep.html" />
+    <Content Include="assets\DataTables-1.10.0\examples\ajax\defer_render.html" />
+    <Content Include="assets\DataTables-1.10.0\examples\ajax\index.html" />
+    <Content Include="assets\DataTables-1.10.0\examples\ajax\null_data_source.html" />
+    <Content Include="assets\DataTables-1.10.0\examples\ajax\objects.html" />
+    <Content Include="assets\DataTables-1.10.0\examples\ajax\objects_subarrays.html" />
+    <Content Include="assets\DataTables-1.10.0\examples\ajax\orthogonal-data.html" />
+    <Content Include="assets\DataTables-1.10.0\examples\ajax\simple.html" />
+    <Content Include="assets\DataTables-1.10.0\examples\api\add_row.html" />
+    <Content Include="assets\DataTables-1.10.0\examples\api\api_in_init.html" />
+    <Content Include="assets\DataTables-1.10.0\examples\api\counter_columns.html" />
+    <Content Include="assets\DataTables-1.10.0\examples\api\form.html" />
+    <Content Include="assets\DataTables-1.10.0\examples\api\highlight.html" />
+    <Content Include="assets\DataTables-1.10.0\examples\api\index.html" />
+    <Content Include="assets\DataTables-1.10.0\examples\api\multi_filter.html" />
+    <Content Include="assets\DataTables-1.10.0\examples\api\multi_filter_select.html" />
+    <Content Include="assets\DataTables-1.10.0\examples\api\regex.html" />
+    <Content Include="assets\DataTables-1.10.0\examples\api\row_details.html" />
+    <Content Include="assets\DataTables-1.10.0\examples\api\select_row.html" />
+    <Content Include="assets\DataTables-1.10.0\examples\api\select_single_row.html" />
+    <Content Include="assets\DataTables-1.10.0\examples\api\show_hide.html" />
+    <Content Include="assets\DataTables-1.10.0\examples\api\tabs_and_scrolling.html" />
+    <Content Include="assets\DataTables-1.10.0\examples\basic_init\alt_pagination.html" />
+    <Content Include="assets\DataTables-1.10.0\examples\basic_init\comma-decimal.html" />
+    <Content Include="assets\DataTables-1.10.0\examples\basic_init\complex_header.html" />
+    <Content Include="assets\DataTables-1.10.0\examples\basic_init\dom.html" />
+    <Content Include="assets\DataTables-1.10.0\examples\basic_init\filter_only.html" />
+    <Content Include="assets\DataTables-1.10.0\examples\basic_init\flexible_width.html" />
+    <Content Include="assets\DataTables-1.10.0\examples\basic_init\hidden_columns.html" />
+    <Content Include="assets\DataTables-1.10.0\examples\basic_init\index.html" />
+    <Content Include="assets\DataTables-1.10.0\examples\basic_init\language.html" />
+    <Content Include="assets\DataTables-1.10.0\examples\basic_init\multiple_tables.html" />
+    <Content Include="assets\DataTables-1.10.0\examples\basic_init\multi_col_sort.html" />
+    <Content Include="assets\DataTables-1.10.0\examples\basic_init\scroll_x.html" />
+    <Content Include="assets\DataTables-1.10.0\examples\basic_init\scroll_xy.html" />
+    <Content Include="assets\DataTables-1.10.0\examples\basic_init\scroll_y.html" />
+    <Content Include="assets\DataTables-1.10.0\examples\basic_init\scroll_y_theme.html" />
+    <Content Include="assets\DataTables-1.10.0\examples\basic_init\state_save.html" />
+    <Content Include="assets\DataTables-1.10.0\examples\basic_init\table_sorting.html" />
+    <Content Include="assets\DataTables-1.10.0\examples\basic_init\zero_configuration.html" />
+    <Content Include="assets\DataTables-1.10.0\examples\data_sources\ajax.html" />
+    <Content Include="assets\DataTables-1.10.0\examples\data_sources\dom.html" />
+    <Content Include="assets\DataTables-1.10.0\examples\data_sources\index.html" />
+    <Content Include="assets\DataTables-1.10.0\examples\data_sources\js_array.html" />
+    <Content Include="assets\DataTables-1.10.0\examples\data_sources\server_side.html" />
+    <Content Include="assets\DataTables-1.10.0\examples\index.html" />
+    <Content Include="assets\DataTables-1.10.0\examples\plug-ins\api.html" />
+    <Content Include="assets\DataTables-1.10.0\examples\plug-ins\dom_sort.html" />
+    <Content Include="assets\DataTables-1.10.0\examples\plug-ins\index.html" />
+    <Content Include="assets\DataTables-1.10.0\examples\plug-ins\range_filtering.html" />
+    <Content Include="assets\DataTables-1.10.0\examples\plug-ins\sorting_auto.html" />
+    <Content Include="assets\DataTables-1.10.0\examples\plug-ins\sorting_manual.html" />
+    <Content Include="assets\DataTables-1.10.0\examples\resources\bootstrap\3\dataTables.bootstrap.css" />
+    <Content Include="assets\DataTables-1.10.0\examples\resources\bootstrap\3\dataTables.bootstrap.js" />
+    <Content Include="assets\DataTables-1.10.0\examples\resources\bootstrap\3\index.html" />
+    <Content Include="assets\DataTables-1.10.0\examples\resources\bootstrap\images\sort_asc.png" />
+    <Content Include="assets\DataTables-1.10.0\examples\resources\bootstrap\images\sort_asc_disabled.png" />
+    <Content Include="assets\DataTables-1.10.0\examples\resources\bootstrap\images\sort_both.png" />
+    <Content Include="assets\DataTables-1.10.0\examples\resources\bootstrap\images\sort_desc.png" />
+    <Content Include="assets\DataTables-1.10.0\examples\resources\bootstrap\images\sort_desc_disabled.png" />
+    <Content Include="assets\DataTables-1.10.0\examples\resources\demo.css" />
+    <Content Include="assets\DataTables-1.10.0\examples\resources\demo.js" />
+    <Content Include="assets\DataTables-1.10.0\examples\resources\details_close.png" />
+    <Content Include="assets\DataTables-1.10.0\examples\resources\details_open.png" />
+    <Content Include="assets\DataTables-1.10.0\examples\resources\de_DE.txt" />
+    <Content Include="assets\DataTables-1.10.0\examples\resources\foundation\dataTables.foundation.css" />
+    <Content Include="assets\DataTables-1.10.0\examples\resources\foundation\dataTables.foundation.js" />
+    <Content Include="assets\DataTables-1.10.0\examples\resources\foundation\images\sort_asc.png" />
+    <Content Include="assets\DataTables-1.10.0\examples\resources\foundation\images\sort_asc_disabled.png" />
+    <Content Include="assets\DataTables-1.10.0\examples\resources\foundation\images\sort_both.png" />
+    <Content Include="assets\DataTables-1.10.0\examples\resources\foundation\images\sort_desc.png" />
+    <Content Include="assets\DataTables-1.10.0\examples\resources\foundation\images\sort_desc_disabled.png" />
+    <Content Include="assets\DataTables-1.10.0\examples\resources\jqueryui\dataTables.jqueryui.css" />
+    <Content Include="assets\DataTables-1.10.0\examples\resources\jqueryui\dataTables.jqueryui.js" />
+    <Content Include="assets\DataTables-1.10.0\examples\resources\jqueryui\index.html" />
+    <Content Include="assets\DataTables-1.10.0\examples\resources\syntax\shCore.css" />
+    <Content Include="assets\DataTables-1.10.0\examples\resources\syntax\shCore.js" />
+    <Content Include="assets\DataTables-1.10.0\examples\server_side\custom_vars.html" />
+    <Content Include="assets\DataTables-1.10.0\examples\server_side\defer_loading.html" />
+    <Content Include="assets\DataTables-1.10.0\examples\server_side\ids.html" />
+    <Content Include="assets\DataTables-1.10.0\examples\server_side\index.html" />
+    <Content Include="assets\DataTables-1.10.0\examples\server_side\jsonp.html" />
+    <Content Include="assets\DataTables-1.10.0\examples\server_side\object_data.html" />
+    <Content Include="assets\DataTables-1.10.0\examples\server_side\pipeline.html" />
+    <Content Include="assets\DataTables-1.10.0\examples\server_side\post.html" />
+    <Content Include="assets\DataTables-1.10.0\examples\server_side\row_details.html" />
+    <Content Include="assets\DataTables-1.10.0\examples\server_side\scripts\mysql.sql" />
+    <Content Include="assets\DataTables-1.10.0\examples\server_side\scripts\postgres.sql" />
+    <Content Include="assets\DataTables-1.10.0\examples\server_side\scripts\sqlite.sql" />
+    <Content Include="assets\DataTables-1.10.0\examples\server_side\scripts\sqlserver.sql" />
+    <Content Include="assets\DataTables-1.10.0\examples\server_side\select_rows.html" />
+    <Content Include="assets\DataTables-1.10.0\examples\server_side\simple.html" />
+    <Content Include="assets\DataTables-1.10.0\examples\styling\bootstrap.html" />
+    <Content Include="assets\DataTables-1.10.0\examples\styling\cell-border.html" />
+    <Content Include="assets\DataTables-1.10.0\examples\styling\display.html" />
+    <Content Include="assets\DataTables-1.10.0\examples\styling\foundation.html" />
+    <Content Include="assets\DataTables-1.10.0\examples\styling\hover.html" />
+    <Content Include="assets\DataTables-1.10.0\examples\styling\index.html" />
+    <Content Include="assets\DataTables-1.10.0\examples\styling\jqueryUI.html" />
+    <Content Include="assets\DataTables-1.10.0\examples\styling\no-classes.html" />
+    <Content Include="assets\DataTables-1.10.0\examples\styling\order-column.html" />
+    <Content Include="assets\DataTables-1.10.0\examples\styling\row-border.html" />
+    <Content Include="assets\DataTables-1.10.0\examples\styling\stripe.html" />
+    <Content Include="assets\DataTables-1.10.0\extensions\AutoFill\css\dataTables.autoFill.css" />
+    <Content Include="assets\DataTables-1.10.0\extensions\AutoFill\css\dataTables.autoFill.min.css" />
+    <Content Include="assets\DataTables-1.10.0\extensions\AutoFill\examples\columns.html" />
+    <Content Include="assets\DataTables-1.10.0\extensions\AutoFill\examples\complete-callback.html" />
+    <Content Include="assets\DataTables-1.10.0\extensions\AutoFill\examples\fill-both.html" />
+    <Content Include="assets\DataTables-1.10.0\extensions\AutoFill\examples\fill-horizontal.html" />
+    <Content Include="assets\DataTables-1.10.0\extensions\AutoFill\examples\index.html" />
+    <Content Include="assets\DataTables-1.10.0\extensions\AutoFill\examples\scrolling.html" />
+    <Content Include="assets\DataTables-1.10.0\extensions\AutoFill\examples\simple.html" />
+    <Content Include="assets\DataTables-1.10.0\extensions\AutoFill\examples\step-callback.html" />
+    <Content Include="assets\DataTables-1.10.0\extensions\AutoFill\images\filler.png" />
+    <Content Include="assets\DataTables-1.10.0\extensions\AutoFill\js\dataTables.autoFill.js" />
+    <Content Include="assets\DataTables-1.10.0\extensions\AutoFill\js\dataTables.autoFill.min.js" />
+    <Content Include="assets\DataTables-1.10.0\extensions\AutoFill\Readme.txt" />
+    <Content Include="assets\DataTables-1.10.0\extensions\ColReorder\css\dataTables.colReorder.css" />
+    <Content Include="assets\DataTables-1.10.0\extensions\ColReorder\css\dataTables.colReorder.min.css" />
+    <Content Include="assets\DataTables-1.10.0\extensions\ColReorder\examples\alt_insert.html" />
+    <Content Include="assets\DataTables-1.10.0\extensions\ColReorder\examples\colvis.html" />
+    <Content Include="assets\DataTables-1.10.0\extensions\ColReorder\examples\col_filter.html" />
+    <Content Include="assets\DataTables-1.10.0\extensions\ColReorder\examples\fixedcolumns.html" />
+    <Content Include="assets\DataTables-1.10.0\extensions\ColReorder\examples\fixedheader.html" />
+    <Content Include="assets\DataTables-1.10.0\extensions\ColReorder\examples\index.html" />
+    <Content Include="assets\DataTables-1.10.0\extensions\ColReorder\examples\jqueryui.html" />
+    <Content Include="assets\DataTables-1.10.0\extensions\ColReorder\examples\new_init.html" />
+    <Content Include="assets\DataTables-1.10.0\extensions\ColReorder\examples\predefined.html" />
+    <Content Include="assets\DataTables-1.10.0\extensions\ColReorder\examples\realtime.html" />
+    <Content Include="assets\DataTables-1.10.0\extensions\ColReorder\examples\reset.html" />
+    <Content Include="assets\DataTables-1.10.0\extensions\ColReorder\examples\scrolling.html" />
+    <Content Include="assets\DataTables-1.10.0\extensions\ColReorder\examples\server_side.html" />
+    <Content Include="assets\DataTables-1.10.0\extensions\ColReorder\examples\simple.html" />
+    <Content Include="assets\DataTables-1.10.0\extensions\ColReorder\examples\state_save.html" />
+    <Content Include="assets\DataTables-1.10.0\extensions\ColReorder\images\insert.png" />
+    <Content Include="assets\DataTables-1.10.0\extensions\ColReorder\js\dataTables.colReorder.js" />
+    <Content Include="assets\DataTables-1.10.0\extensions\ColReorder\js\dataTables.colReorder.min.js" />
+    <Content Include="assets\DataTables-1.10.0\extensions\ColReorder\Readme.txt" />
+    <Content Include="assets\DataTables-1.10.0\extensions\ColVis\css\dataTables.colVis.css" />
+    <Content Include="assets\DataTables-1.10.0\extensions\ColVis\css\dataTables.colvis.jqueryui.css" />
+    <Content Include="assets\DataTables-1.10.0\extensions\ColVis\css\dataTables.colVis.min.css" />
+    <Content Include="assets\DataTables-1.10.0\extensions\ColVis\examples\button_order.html" />
+    <Content Include="assets\DataTables-1.10.0\extensions\ColVis\examples\exclude_columns.html" />
+    <Content Include="assets\DataTables-1.10.0\extensions\ColVis\examples\group_columns.html" />
+    <Content Include="assets\DataTables-1.10.0\extensions\ColVis\examples\index.html" />
+    <Content Include="assets\DataTables-1.10.0\extensions\ColVis\examples\jqueryui.html" />
+    <Content Include="assets\DataTables-1.10.0\extensions\ColVis\examples\mouseover.html" />
+    <Content Include="assets\DataTables-1.10.0\extensions\ColVis\examples\new_init.html" />
+    <Content Include="assets\DataTables-1.10.0\extensions\ColVis\examples\restore.html" />
+    <Content Include="assets\DataTables-1.10.0\extensions\ColVis\examples\simple.html" />
+    <Content Include="assets\DataTables-1.10.0\extensions\ColVis\examples\text.html" />
+    <Content Include="assets\DataTables-1.10.0\extensions\ColVis\examples\title_callback.html" />
+    <Content Include="assets\DataTables-1.10.0\extensions\ColVis\examples\two_tables.html" />
+    <Content Include="assets\DataTables-1.10.0\extensions\ColVis\examples\two_tables_identical.html" />
+    <Content Include="assets\DataTables-1.10.0\extensions\ColVis\js\dataTables.colVis.js" />
+    <Content Include="assets\DataTables-1.10.0\extensions\ColVis\js\dataTables.colVis.min.js" />
+    <Content Include="assets\DataTables-1.10.0\extensions\ColVis\Readme.txt" />
+    <Content Include="assets\DataTables-1.10.0\extensions\FixedColumns\css\dataTables.fixedColumns.css" />
+    <Content Include="assets\DataTables-1.10.0\extensions\FixedColumns\css\dataTables.fixedColumns.min.css" />
+    <Content Include="assets\DataTables-1.10.0\extensions\FixedColumns\examples\bootstrap.html" />
+    <Content Include="assets\DataTables-1.10.0\extensions\FixedColumns\examples\colvis.html" />
+    <Content Include="assets\DataTables-1.10.0\extensions\FixedColumns\examples\col_filter.html" />
+    <Content Include="assets\DataTables-1.10.0\extensions\FixedColumns\examples\css_size.html" />
+    <Content Include="assets\DataTables-1.10.0\extensions\FixedColumns\examples\index.html" />
+    <Content Include="assets\DataTables-1.10.0\extensions\FixedColumns\examples\index_column.html" />
+    <Content Include="assets\DataTables-1.10.0\extensions\FixedColumns\examples\left_right_columns.html" />
+    <Content Include="assets\DataTables-1.10.0\extensions\FixedColumns\examples\right_column.html" />
+    <Content Include="assets\DataTables-1.10.0\extensions\FixedColumns\examples\rowspan.html" />
+    <Content Include="assets\DataTables-1.10.0\extensions\FixedColumns\examples\server-side-processing.html" />
+    <Content Include="assets\DataTables-1.10.0\extensions\FixedColumns\examples\simple.html" />
+    <Content Include="assets\DataTables-1.10.0\extensions\FixedColumns\examples\size_fixed.html" />
+    <Content Include="assets\DataTables-1.10.0\extensions\FixedColumns\examples\size_fluid.html" />
+    <Content Include="assets\DataTables-1.10.0\extensions\FixedColumns\examples\two_columns.html" />
+    <Content Include="assets\DataTables-1.10.0\extensions\FixedColumns\js\dataTables.fixedColumns.js" />
+    <Content Include="assets\DataTables-1.10.0\extensions\FixedColumns\js\dataTables.fixedColumns.min.js" />
+    <Content Include="assets\DataTables-1.10.0\extensions\FixedColumns\Readme.txt" />
+    <Content Include="assets\DataTables-1.10.0\extensions\FixedHeader\css\dataTables.fixedHeader.css" />
+    <Content Include="assets\DataTables-1.10.0\extensions\FixedHeader\css\dataTables.fixedHeader.min.css" />
+    <Content Include="assets\DataTables-1.10.0\extensions\FixedHeader\examples\header_footer.html" />
+    <Content Include="assets\DataTables-1.10.0\extensions\FixedHeader\examples\index.html" />
+    <Content Include="assets\DataTables-1.10.0\extensions\FixedHeader\examples\simple.html" />
+    <Content Include="assets\DataTables-1.10.0\extensions\FixedHeader\examples\top_left_right.html" />
+    <Content Include="assets\DataTables-1.10.0\extensions\FixedHeader\examples\two_tables.html" />
+    <Content Include="assets\DataTables-1.10.0\extensions\FixedHeader\examples\zIndexes.html" />
+    <Content Include="assets\DataTables-1.10.0\extensions\FixedHeader\js\dataTables.fixedHeader.js" />
+    <Content Include="assets\DataTables-1.10.0\extensions\FixedHeader\js\dataTables.fixedHeader.min.js" />
+    <Content Include="assets\DataTables-1.10.0\extensions\FixedHeader\Readme.txt" />
+    <Content Include="assets\DataTables-1.10.0\extensions\KeyTable\css\dataTables.keyTable.css" />
+    <Content Include="assets\DataTables-1.10.0\extensions\KeyTable\css\dataTables.keyTable.min.css" />
+    <Content Include="assets\DataTables-1.10.0\extensions\KeyTable\examples\ajax.html" />
+    <Content Include="assets\DataTables-1.10.0\extensions\KeyTable\examples\events.html" />
+    <Content Include="assets\DataTables-1.10.0\extensions\KeyTable\examples\html.html" />
+    <Content Include="assets\DataTables-1.10.0\extensions\KeyTable\examples\index.html" />
+    <Content Include="assets\DataTables-1.10.0\extensions\KeyTable\examples\scrolling.html" />
+    <Content Include="assets\DataTables-1.10.0\extensions\KeyTable\examples\simple.html" />
+    <Content Include="assets\DataTables-1.10.0\extensions\KeyTable\js\dataTables.keyTable.js" />
+    <Content Include="assets\DataTables-1.10.0\extensions\KeyTable\js\dataTables.keyTable.min.js" />
+    <Content Include="assets\DataTables-1.10.0\extensions\KeyTable\Readme.txt" />
+    <Content Include="assets\DataTables-1.10.0\extensions\Scroller\css\dataTables.scroller.css" />
+    <Content Include="assets\DataTables-1.10.0\extensions\Scroller\css\dataTables.scroller.min.css" />
+    <Content Include="assets\DataTables-1.10.0\extensions\Scroller\examples\api_scrolling.html" />
+    <Content Include="assets\DataTables-1.10.0\extensions\Scroller\examples\data\2500.txt" />
+    <Content Include="assets\DataTables-1.10.0\extensions\Scroller\examples\index.html" />
+    <Content Include="assets\DataTables-1.10.0\extensions\Scroller\examples\large_js_source.html" />
+    <Content Include="assets\DataTables-1.10.0\extensions\Scroller\examples\server-side_processing.html" />
+    <Content Include="assets\DataTables-1.10.0\extensions\Scroller\examples\simple.html" />
+    <Content Include="assets\DataTables-1.10.0\extensions\Scroller\examples\state_saving.html" />
+    <Content Include="assets\DataTables-1.10.0\extensions\Scroller\images\loading-background.png" />
+    <Content Include="assets\DataTables-1.10.0\extensions\Scroller\js\dataTables.scroller.js" />
+    <Content Include="assets\DataTables-1.10.0\extensions\Scroller\js\dataTables.scroller.min.js" />
+    <Content Include="assets\DataTables-1.10.0\extensions\Scroller\Readme.txt" />
+    <Content Include="assets\DataTables-1.10.0\extensions\TableTools\css\dataTables.tableTools.css" />
+    <Content Include="assets\DataTables-1.10.0\extensions\TableTools\css\dataTables.tableTools.min.css" />
+    <Content Include="assets\DataTables-1.10.0\extensions\TableTools\examples\alter_buttons.html" />
+    <Content Include="assets\DataTables-1.10.0\extensions\TableTools\examples\bootstrap.html" />
+    <Content Include="assets\DataTables-1.10.0\extensions\TableTools\examples\button_text.html" />
+    <Content Include="assets\DataTables-1.10.0\extensions\TableTools\examples\collection.html" />
+    <Content Include="assets\DataTables-1.10.0\extensions\TableTools\examples\defaults.html" />
+    <Content Include="assets\DataTables-1.10.0\extensions\TableTools\examples\index.html" />
+    <Content Include="assets\DataTables-1.10.0\extensions\TableTools\examples\multiple_tables.html" />
+    <Content Include="assets\DataTables-1.10.0\extensions\TableTools\examples\multi_instance.html" />
+    <Content Include="assets\DataTables-1.10.0\extensions\TableTools\examples\new_init.html" />
+    <Content Include="assets\DataTables-1.10.0\extensions\TableTools\examples\pdf_message.html" />
+    <Content Include="assets\DataTables-1.10.0\extensions\TableTools\examples\plug-in.html" />
+    <Content Include="assets\DataTables-1.10.0\extensions\TableTools\examples\select_column.html" />
+    <Content Include="assets\DataTables-1.10.0\extensions\TableTools\examples\select_multi.html" />
+    <Content Include="assets\DataTables-1.10.0\extensions\TableTools\examples\select_os.html" />
+    <Content Include="assets\DataTables-1.10.0\extensions\TableTools\examples\select_single.html" />
+    <Content Include="assets\DataTables-1.10.0\extensions\TableTools\examples\simple.html" />
+    <Content Include="assets\DataTables-1.10.0\extensions\TableTools\examples\swf_path.html" />
+    <Content Include="assets\DataTables-1.10.0\extensions\TableTools\images\background.png" />
+    <Content Include="assets\DataTables-1.10.0\extensions\TableTools\images\collection.png" />
+    <Content Include="assets\DataTables-1.10.0\extensions\TableTools\images\collection_hover.png" />
+    <Content Include="assets\DataTables-1.10.0\extensions\TableTools\images\copy.png" />
+    <Content Include="assets\DataTables-1.10.0\extensions\TableTools\images\copy_hover.png" />
+    <Content Include="assets\DataTables-1.10.0\extensions\TableTools\images\csv.png" />
+    <Content Include="assets\DataTables-1.10.0\extensions\TableTools\images\csv_hover.png" />
+    <Content Include="assets\DataTables-1.10.0\extensions\TableTools\images\pdf.png" />
+    <Content Include="assets\DataTables-1.10.0\extensions\TableTools\images\pdf_hover.png" />
+    <Content Include="assets\DataTables-1.10.0\extensions\TableTools\images\print.png" />
+    <Content Include="assets\DataTables-1.10.0\extensions\TableTools\images\print_hover.png" />
+    <Content Include="assets\DataTables-1.10.0\extensions\TableTools\images\xls.png" />
+    <Content Include="assets\DataTables-1.10.0\extensions\TableTools\images\xls_hover.png" />
+    <Content Include="assets\DataTables-1.10.0\extensions\TableTools\js\dataTables.tableTools.js" />
+    <Content Include="assets\DataTables-1.10.0\extensions\TableTools\js\dataTables.tableTools.min.js" />
+    <Content Include="assets\DataTables-1.10.0\extensions\TableTools\Readme.txt" />
+    <Content Include="assets\DataTables-1.10.0\extensions\TableTools\swf\copy_csv_xls.swf" />
+    <Content Include="assets\DataTables-1.10.0\extensions\TableTools\swf\copy_csv_xls_pdf.swf" />
+    <Content Include="assets\DataTables-1.10.0\license.txt" />
+    <Content Include="assets\DataTables-1.10.0\media\css\jquery.dataTables.css" />
+    <Content Include="assets\DataTables-1.10.0\media\css\jquery.dataTables.min.css" />
+    <Content Include="assets\DataTables-1.10.0\media\css\jquery.dataTables_themeroller.css" />
+    <Content Include="assets\DataTables-1.10.0\media\css\jquery.dataTables_themeroller.min.css" />
+    <Content Include="assets\DataTables-1.10.0\media\images\back_disabled.png" />
+    <Content Include="assets\DataTables-1.10.0\media\images\back_enabled.png" />
+    <Content Include="assets\DataTables-1.10.0\media\images\back_enabled_hover.png" />
+    <Content Include="assets\DataTables-1.10.0\media\images\favicon.ico" />
+    <Content Include="assets\DataTables-1.10.0\media\images\forward_disabled.png" />
+    <Content Include="assets\DataTables-1.10.0\media\images\forward_enabled.png" />
+    <Content Include="assets\DataTables-1.10.0\media\images\forward_enabled_hover.png" />
+    <Content Include="assets\DataTables-1.10.0\media\images\sort_asc.png" />
+    <Content Include="assets\DataTables-1.10.0\media\images\sort_asc_disabled.png" />
+    <Content Include="assets\DataTables-1.10.0\media\images\sort_both.png" />
+    <Content Include="assets\DataTables-1.10.0\media\images\sort_desc.png" />
+    <Content Include="assets\DataTables-1.10.0\media\images\sort_desc_disabled.png" />
+    <Content Include="assets\DataTables-1.10.0\media\js\jquery.dataTables.js" />
+    <Content Include="assets\DataTables-1.10.0\media\js\jquery.dataTables.min.js" />
+    <Content Include="assets\DataTables-1.10.0\media\js\jquery.js" />
+    <Content Include="assets\hdp21_logo.png" />
+    <Content Include="assets\icons\current_sesnsor.png" />
+    <Content Include="assets\icons\location.png" />
+    <Content Include="assets\icons\truck_black.png" />
+    <Content Include="assets\icons\truck_black_1.png" />
+    <Content Include="assets\icons\truck_black_2.png" />
+    <Content Include="assets\icons\truck_black_3.png" />
+    <Content Include="assets\icons\truck_black_4.png" />
+    <Content Include="assets\icons\truck_info.png" />
+    <Content Include="assets\icons\truck_orange.png" />
+    <Content Include="assets\icons\truck_orange_1.png" />
+    <Content Include="assets\icons\truck_orange_2.png" />
+    <Content Include="assets\icons\truck_orange_3.png" />
+    <Content Include="assets\icons\truck_orange_4.png" />
+    <Content Include="assets\icons\truck_red.png" />
+    <Content Include="assets\icons\truck_red_1.png" />
+    <Content Include="assets\icons\truck_red_2.png" />
+    <Content Include="assets\icons\truck_red_3.png" />
+    <Content Include="assets\icons\truck_red_4.png" />
+    <Content Include="assets\icons\truck_yellow.png" />
+    <Content Include="assets\icons\truck_yellow_1.png" />
+    <Content Include="assets\icons\truck_yellow_2.png" />
+    <Content Include="assets\icons\truck_yellow_3.png" />
+    <Content Include="assets\icons\truck_yellow_4.png" />
+    <Content Include="assets\jquery-1.11.1.js" />
+    <Content Include="assets\leaflet-0.7.3\images\layers-2x.png" />
+    <Content Include="assets\leaflet-0.7.3\images\layers.png" />
+    <Content Include="assets\leaflet-0.7.3\images\marker-icon-2x.png" />
+    <Content Include="assets\leaflet-0.7.3\images\marker-icon.png" />
+    <Content Include="assets\leaflet-0.7.3\images\marker-shadow.png" />
+    <Content Include="assets\leaflet-0.7.3\leaflet-src.js" />
+    <Content Include="assets\leaflet-0.7.3\leaflet.css" />
+    <Content Include="assets\leaflet-0.7.3\leaflet.js" />
+    <Content Include="assets\leaflet-plugins\control\Distance.js" />
+    <Content Include="assets\leaflet-plugins\control\Layers.Load.js" />
+    <Content Include="assets\leaflet-plugins\control\Permalink.js" />
+    <Content Include="assets\leaflet-plugins\control\Permalink.Layer.js" />
+    <Content Include="assets\leaflet-plugins\control\Permalink.Line.js" />
+    <Content Include="assets\leaflet-plugins\control\Permalink.Marker.js" />
+    <Content Include="assets\leaflet-plugins\css\cross.png" />
+    <Content Include="assets\leaflet-plugins\css\distance.css" />
+    <Content Include="assets\leaflet-plugins\css\measure.png" />
+    <Content Include="assets\leaflet-plugins\css\osb.css" />
+    <Content Include="assets\leaflet-plugins\examples\bing.html" />
+    <Content Include="assets\leaflet-plugins\examples\deferred.html" />
+    <Content Include="assets\leaflet-plugins\examples\distance.html" />
+    <Content Include="assets\leaflet-plugins\examples\google-custom.html" />
+    <Content Include="assets\leaflet-plugins\examples\google.html" />
+    <Content Include="assets\leaflet-plugins\examples\gpx-no-wpt.html" />
+    <Content Include="assets\leaflet-plugins\examples\gpx-speed.html" />
+    <Content Include="assets\leaflet-plugins\examples\gpx.html" />
+    <Content Include="assets\leaflet-plugins\examples\kml.html" />
+    <Content Include="assets\leaflet-plugins\examples\marker-canvas.html" />
+    <Content Include="assets\leaflet-plugins\examples\marker-rotate.html" />
+    <Content Include="assets\leaflet-plugins\examples\marker-text.html" />
+    <Content Include="assets\leaflet-plugins\examples\osb.html" />
+    <Content Include="assets\leaflet-plugins\examples\osm.html" />
+    <Content Include="assets\leaflet-plugins\examples\permalink.html" />
+    <Content Include="assets\leaflet-plugins\examples\yandex.html" />
+    <Content Include="assets\leaflet-plugins\layer\Icon.Canvas.js" />
+    <Content Include="assets\leaflet-plugins\layer\Layer.Deferred.js" />
+    <Content Include="assets\leaflet-plugins\layer\Marker.Rotate.js" />
+    <Content Include="assets\leaflet-plugins\layer\Marker.Text.js" />
+    <Content Include="assets\leaflet-plugins\layer\OpenStreetBugs.js" />
+    <Content Include="assets\leaflet-plugins\layer\tile\Bing.js" />
+    <Content Include="assets\leaflet-plugins\layer\tile\Google.js" />
+    <Content Include="assets\leaflet-plugins\layer\tile\Yandex.js" />
+    <Content Include="assets\leaflet-plugins\layer\vector\GPX.js" />
+    <Content Include="assets\leaflet-plugins\layer\vector\GPX.Speed.js" />
+    <Content Include="assets\leaflet-plugins\layer\vector\KML.js" />
+    <Content Include="assets\leaflet-plugins\layer\vector\OSM.js" />
+    <Content Include="assets\nvd3\.gitignore" />
+    <Content Include="assets\nvd3\deprecated\bar.html" />
+    <Content Include="assets\nvd3\deprecated\bar.js" />
+    <Content Include="assets\nvd3\deprecated\charts\cumulativeLineChart.js" />
+    <Content Include="assets\nvd3\deprecated\charts\discreteBarChart.js" />
+    <Content Include="assets\nvd3\deprecated\charts\lineChart.js" />
+    <Content Include="assets\nvd3\deprecated\charts\lineChartDaily.js" />
+    <Content Include="assets\nvd3\deprecated\charts\stackedAreaChart.js" />
+    <Content Include="assets\nvd3\deprecated\cumulativeLine.html" />
+    <Content Include="assets\nvd3\deprecated\cumulativeLine.js" />
+    <Content Include="assets\nvd3\deprecated\discreteBarChartWithEnabledTooltip.html" />
+    <Content Include="assets\nvd3\deprecated\discreteBarChartWithEnabledTooltip.js" />
+    <Content Include="assets\nvd3\deprecated\discreteBarWithAxes.html" />
+    <Content Include="assets\nvd3\deprecated\discreteBarWithAxes.js" />
+    <Content Include="assets\nvd3\deprecated\lineChart-old.html" />
+    <Content Include="assets\nvd3\deprecated\lineChartDaily.html" />
+    <Content Include="assets\nvd3\deprecated\linePlusBar.html" />
+    <Content Include="assets\nvd3\deprecated\linePlusBar.js" />
+    <Content Include="assets\nvd3\deprecated\lineWithFocus.html" />
+    <Content Include="assets\nvd3\deprecated\lineWithFocus.js" />
+    <Content Include="assets\nvd3\deprecated\lineWithFourAxes.html" />
+    <Content Include="assets\nvd3\deprecated\lineWithFourAxes.js" />
+    <Content Include="assets\nvd3\deprecated\lineWithLegend.html" />
+    <Content Include="assets\nvd3\deprecated\lineWithLegend.js" />
+    <Content Include="assets\nvd3\deprecated\monthendAxis.html" />
+    <Content Include="assets\nvd3\deprecated\multiBarHorizontalWithLegend.html" />
+    <Content Include="assets\nvd3\deprecated\multiBarHorizontalWithLegend.js" />
+    <Content Include="assets\nvd3\deprecated\multiBarWithLegend.html" />
+    <Content Include="assets\nvd3\deprecated\multiBarWithLegend.js" />
+    <Content Include="assets\nvd3\deprecated\pie.js" />
+    <Content Include="assets\nvd3\deprecated\scatterChart.html" />
+    <Content Include="assets\nvd3\deprecated\scatterChart.js" />
+    <Content Include="assets\nvd3\deprecated\scatterFisheyeChart.js" />
+    <Content Include="assets\nvd3\deprecated\scatterWithLegend.html" />
+    <Content Include="assets\nvd3\deprecated\scatterWithLegend.js" />
+    <Content Include="assets\nvd3\deprecated\stackedArea.js" />
+    <Content Include="assets\nvd3\deprecated\stackedAreaChart.html" />
+    <Content Include="assets\nvd3\deprecated\stackedAreaChart_old.html" />
+    <Content Include="assets\nvd3\deprecated\stackedAreaWithLegend.html" />
+    <Content Include="assets\nvd3\deprecated\stackedAreaWithLegend.js" />
+    <Content Include="assets\nvd3\examples\bullet.html" />
+    <Content Include="assets\nvd3\examples\bulletChart.html" />
+    <Content Include="assets\nvd3\examples\crossfilter.html" />
+    <Content Include="assets\nvd3\examples\crossfilterWithDimentions.html" />
+    <Content Include="assets\nvd3\examples\crossfilterWithTables.html" />
+    <Content Include="assets\nvd3\examples\cumulativeLineChart.html" />
+    <Content Include="assets\nvd3\examples\discreteBarChart.html" />
+    <Content Include="assets\nvd3\examples\historicalBar.html" />
+    <Content Include="assets\nvd3\examples\historicalBarChart.html" />
+    <Content Include="assets\nvd3\examples\horizon.html" />
+    <Content Include="assets\nvd3\examples\images\grey-minus.png" />
+    <Content Include="assets\nvd3\examples\images\grey-plus.png" />
+    <Content Include="assets\nvd3\examples\images\nvd3_sampleLineChart1.png" />
+    <Content Include="assets\nvd3\examples\indentedtree.html" />
+    <Content Include="assets\nvd3\examples\index.html" />
+    <Content Include="assets\nvd3\examples\legend.html" />
+    <Content Include="assets\nvd3\examples\line.html" />
+    <Content Include="assets\nvd3\examples\lineChart.html" />
+    <Content Include="assets\nvd3\examples\lineChartSVGResize.html" />
+    <Content Include="assets\nvd3\examples\linePlusBarChart.html" />
+    <Content Include="assets\nvd3\examples\linePlusBarWithFocusChart.html" />
+    <Content Include="assets\nvd3\examples\lineWithFisheyeChart.html" />
+    <Content Include="assets\nvd3\examples\lineWithFocusChart.html" />
+    <Content Include="assets\nvd3\examples\multiBar.html" />
+    <Content Include="assets\nvd3\examples\multiBarChart.html" />
+    <Content Include="assets\nvd3\examples\multiBarHorizontalChart.html" />
+    <Content Include="assets\nvd3\examples\multiChart.html" />
+    <Content Include="assets\nvd3\examples\parallelCoordinates.html" />
+    <Content Include="assets\nvd3\examples\pie.html" />
+    <Content Include="assets\nvd3\examples\pieChart.html" />
+    <Content Include="assets\nvd3\examples\scatter.html" />
+    <Content Include="assets\nvd3\examples\scatterChart.html" />
+    <Content Include="assets\nvd3\examples\scatterPlusLineChart.html" />
+    <Content Include="assets\nvd3\examples\sparkline.html" />
+    <Content Include="assets\nvd3\examples\sparklinePlus.html" />
+    <Content Include="assets\nvd3\examples\stackedArea.html" />
+    <Content Include="assets\nvd3\examples\stackedAreaChart.html" />
+    <Content Include="assets\nvd3\examples\stream_layers.js" />
+    <Content Include="assets\nvd3\GruntFile.js" />
+    <Content Include="assets\nvd3\lib\cie.js" />
+    <Content Include="assets\nvd3\lib\colorbrewer.js" />
+    <Content Include="assets\nvd3\lib\crossfilter.js" />
+    <Content Include="assets\nvd3\lib\crossfilter.min.js" />
+    <Content Include="assets\nvd3\lib\d3.v2.js" />
+    <Content Include="assets\nvd3\lib\d3.v2.min.js" />
+    <Content Include="assets\nvd3\lib\d3.v3.js" />
+    <Content Include="assets\nvd3\lib\fisheye.js" />
+    <Content Include="assets\nvd3\lib\hive.js" />
+    <Content Include="assets\nvd3\lib\horizon.js" />
+    <Content Include="assets\nvd3\lib\sankey.js" />
+    <Content Include="assets\nvd3\nv.d3.css" />
+    <Content Include="assets\nvd3\nv.d3.js" />
+    <Content Include="assets\nvd3\nv.d3.min.css" />
+    <Content Include="assets\nvd3\nv.d3.min.js" />
+    <Content Include="assets\nvd3\src\core.js" />
+    <Content Include="assets\nvd3\src\interactiveLayer.js" />
+    <Content Include="assets\nvd3\src\intro.js" />
+    <Content Include="assets\nvd3\src\models\axis.js" />
+    <Content Include="assets\nvd3\src\models\backup\bullet.js" />
+    <Content Include="assets\nvd3\src\models\backup\bulletChart.js" />
+    <Content Include="assets\nvd3\src\models\boilerplate.js" />
+    <Content Include="assets\nvd3\src\models\bullet.js" />
+    <Content Include="assets\nvd3\src\models\bulletChart.js" />
+    <Content Include="assets\nvd3\src\models\cumulativeLineChart.js" />
+    <Content Include="assets\nvd3\src\models\discreteBar.js" />
+    <Content Include="assets\nvd3\src\models\discreteBarChart.js" />
+    <Content Include="assets\nvd3\src\models\distribution.js" />
+    <Content Include="assets\nvd3\src\models\historicalBar.js" />
+    <Content Include="assets\nvd3\src\models\historicalBarChart.js" />
+    <Content Include="assets\nvd3\src\models\indentedTree.js" />
+    <Content Include="assets\nvd3\src\models\legend.js" />
+    <Content Include="assets\nvd3\src\models\line.js" />
+    <Content Include="assets\nvd3\src\models\lineChart.js" />
+    <Content Include="assets\nvd3\src\models\linePlusBarChart.js" />
+    <Content Include="assets\nvd3\src\models\linePlusBarWithFocusChart.js" />
+    <Content Include="assets\nvd3\src\models\lineWithFisheye.js" />
+    <Content Include="assets\nvd3\src\models\lineWithFisheyeChart.js" />
+    <Content Include="assets\nvd3\src\models\lineWithFocusChart.js" />
+    <Content Include="assets\nvd3\src\models\multiBar.js" />
+    <Content Include="assets\nvd3\src\models\multiBarChart.js" />
+    <Content Include="assets\nvd3\src\models\multiBarHorizontal.js" />
+    <Content Include="assets\nvd3\src\models\multiBarHorizontalChart.js" />
+    <Content Include="assets\nvd3\src\models\multiBarTimeSeries.js" />
+    <Content Include="assets\nvd3\src\models\multiBarTimeSeriesChart.js" />
+    <Content Include="assets\nvd3\src\models\multiChart.js" />
+    <Content Include="assets\nvd3\src\models\ohlcBar.js" />
+    <Content Include="assets\nvd3\src\models\parallelCoordinates.js" />
+    <Content Include="assets\nvd3\src\models\pie.js" />
+    <Content Include="assets\nvd3\src\models\pieChart.js" />
+    <Content Include="assets\nvd3\src\models\scatter.js" />
+    <Content Include="assets\nvd3\src\models\scatterChart.js" />
+    <Content Include="assets\nvd3\src\models\scatterPlusLineChart.js" />
+    <Content Include="assets\nvd3\src\models\sparkline.js" />
+    <Content Include="assets\nvd3\src\models\sparklinePlus.js" />
+    <Content Include="assets\nvd3\src\models\stackedArea.js" />
+    <Content Include="assets\nvd3\src\models\stackedAreaChart.js" />
+    <Content Include="assets\nvd3\src\nv.d3.css" />
+    <Content Include="assets\nvd3\src\outro.js" />
+    <Content Include="assets\nvd3\src\tooltip.js" />
+    <Content Include="assets\nvd3\src\utils.js" />
+    <Content Include="assets\nvd3\test\interactiveBisectTest.html" />
+    <Content Include="assets\nvd3\test\lineChartTest.html" />
+    <Content Include="assets\nvd3\test\multiBarChartTest.html" />
+    <Content Include="assets\nvd3\test\pieChartTest.html" />
+    <Content Include="assets\nvd3\test\polylinearTest.html" />
+    <Content Include="assets\nvd3\test\realTimeChartTest.html" />
+    <Content Include="assets\nvd3\test\ScatterChartTest.html" />
+    <Content Include="assets\nvd3\test\stackedAreaChartTest.html" />
+    <Content Include="assets\nvd3\test\testScript.js" />
+    <Content Include="assets\nvd3\test\teststyle.css" />
+    <Content Include="Scripts\bootstrap-switch.min.js" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\Highcharts-4.0.1\js\adapters\standalone-framework.js" />
+    <Content Include="Scripts\Highcharts-4.0.1\js\adapters\standalone-framework.src.js" />
+    <Content Include="Scripts\Highcharts-4.0.1\js\highcharts-3d.js" />
+    <Content Include="Scripts\Highcharts-4.0.1\js\highcharts-3d.src.js" />
+    <Content Include="Scripts\Highcharts-4.0.1\js\highcharts-all.js" />
+    <Content Include="Scripts\Highcharts-4.0.1\js\highcharts-more.js" />
+    <Content Include="Scripts\Highcharts-4.0.1\js\highcharts-more.src.js" />
+    <Content Include="Scripts\Highcharts-4.0.1\js\highcharts.js" />
+    <Content Include="Scripts\Highcharts-4.0.1\js\highcharts.src.js" />
+    <Content Include="Scripts\Highcharts-4.0.1\js\modules\canvas-tools.js" />
+    <Content Include="Scripts\Highcharts-4.0.1\js\modules\canvas-tools.src.js" />
+    <Content Include="Scripts\Highcharts-4.0.1\js\modules\data.js" />
+    <Content Include="Scripts\Highcharts-4.0.1\js\modules\data.src.js" />
+    <Content Include="Scripts\Highcharts-4.0.1\js\modules\drilldown.js" />
+    <Content Include="Scripts\Highcharts-4.0.1\js\modules\drilldown.src.js" />
+    <Content Include="Scripts\Highcharts-4.0.1\js\modules\exporting.js" />
+    <Content Include="Scripts\Highcharts-4.0.1\js\modules\exporting.src.js" />
+    <Content Include="Scripts\Highcharts-4.0.1\js\modules\funnel.js" />
+    <Content Include="Scripts\Highcharts-4.0.1\js\modules\funnel.src.js" />
+    <Content Include="Scripts\Highcharts-4.0.1\js\modules\heatmap.js" />
+    <Content Include="Scripts\Highcharts-4.0.1\js\modules\heatmap.src.js" />
+    <Content Include="Scripts\Highcharts-4.0.1\js\modules\no-data-to-display.js" />
+    <Content Include="Scripts\Highcharts-4.0.1\js\modules\no-data-to-display.src.js" />
+    <Content Include="Scripts\Highcharts-4.0.1\js\modules\solid-gauge.js" />
+    <Content Include="Scripts\Highcharts-4.0.1\js\modules\solid-gauge.src.js" />
+    <Content Include="Scripts\Highcharts-4.0.1\js\themes\dark-blue.js" />
+    <Content Include="Scripts\Highcharts-4.0.1\js\themes\dark-green.js" />
+    <Content Include="Scripts\Highcharts-4.0.1\js\themes\dark-unica.js" />
+    <Content Include="Scripts\Highcharts-4.0.1\js\themes\gray.js" />
+    <Content Include="Scripts\Highcharts-4.0.1\js\themes\grid-light.js" />
+    <Content Include="Scripts\Highcharts-4.0.1\js\themes\grid.js" />
+    <Content Include="Scripts\Highcharts-4.0.1\js\themes\sand-signika.js" />
+    <Content Include="Scripts\Highcharts-4.0.1\js\themes\skies.js" />
+    <Content Include="Scripts\apphighcharts.js" />
+    <Content Include="Scripts\jquery-2.1.1.js" />
+    <Content Include="Scripts\jquery-2.1.1.min.js" />
+    <Content Include="Scripts\realtimedashboard.js" />
+    <Content Include="Scripts\settings.js" />
+    <Content Include="TrafficVisualization.aspx" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Scripts\jquery-2.1.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\AutoMapperConfig.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="bingmap.aspx.cs">
+      <DependentUpon>bingmap.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="bingmap.aspx.designer.cs">
+      <DependentUpon>bingmap.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DbContexts\TruckDbContext.cs" />
+    <Compile Include="Entities\Configuration.cs" />
+    <Compile Include="Entities\TruckData.cs" />
+    <Compile Include="HBaseReader.cs" />
+    <Compile Include="Default.Master.cs">
+      <DependentUpon>Default.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Default.Master.designer.cs">
+      <DependentUpon>Default.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\Coordinate.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Home.aspx.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Home.aspx.designer.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Iotconfig.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RealTimeDashboardController.cs" />
+    <Compile Include="TrafficVisualization.aspx.cs">
+      <DependentUpon>TrafficVisualization.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TrafficVisualization.aspx.designer.cs">
+      <DependentUpon>TrafficVisualization.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Helpers\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>7099</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:7099/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('$(SolutionDir)\.nuget\NuGet.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(SolutionDir)\.nuget\NuGet.targets'))" />
+  </Target>
+  <Import Project="..\..\TruckDemo\packages\AutoMapper.3.3.1\tools\AutoMapper.targets" Condition="Exists('..\..\TruckDemo\packages\AutoMapper.3.3.1\tools\AutoMapper.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

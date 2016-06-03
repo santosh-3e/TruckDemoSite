@@ -1,0 +1,100 @@
+﻿body {
+    //padding-top: 70px;
+    padding-bottom: 70px;
+    background-color: white;
+    /*color: #FFFFFF;*/
+}
+
+.panel {
+    color: black;
+}
+
+.chart {
+    background-color: #5B9BD5;
+}
+
+.form-horizontal .control-label {
+    text-align: left;
+}
+
+.form-group {
+    margin-bottom: 3px;
+    #background-color: #009dd6;
+}
+
+.highlight {
+    border: 1px solid #009dd6;
+}
+
+.customColor {
+    color: #ffffff;
+}
+
+.highcharts-yaxis-title {
+    color: #ffffff !important;
+    fill: #ffffff !important;
+}
+
+.cutombutton {
+    font-size: 25px;
+    font-weight: bold;
+    background-image: url('/Images/Play2.png');
+    background-repeat: no-repeat;
+    width: 80px;
+    height: 80px;
+    border: none;
+}
+ 
+.tab {
+    height: 480px;
+}
+
+.location_div {
+    margin-bottom: 20px;
+    # margin-left: 15px;
+    background-color: #00B050;
+}
+
+    .location_div h4 {
+        color: black !important;
+    }
+     
+.truckinfo_div {
+    margin-bottom: 20px;
+    margin-left: 15px;
+    background-color: #92D050; 
+    color: black !important;
+}
+
+.currentsesor_div {
+    margin-bottom: 20px;
+    margin-left: 15px;
+    background-color: #0070C0;
+    color: black !important;
+}
+
+.thumbnail {
+    margin-top: 10px;
+    height: 70px;
+    width: 70px;
+    vertical-align: middle;
+}
+
+#aboutus li a:hover{
+    color:black !important;
+    background-color:darkgrey !important;
+}
+
+.nav li.active a{
+    background-color:#1C3052   !important;
+    color:white;
+}
+.nav li a{
+    background-color:#90B0D4 !important; 
+    color:white;
+}
+
+.nav li.active a:hover{
+    background-color:#1C3052   !important;
+    color:white;
+}

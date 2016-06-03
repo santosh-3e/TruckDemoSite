@@ -1,0 +1,70 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Default.Master.cs" Inherits="TrafficVisualization.Default" %>
+<%@ Import Namespace="System.Web.Optimization" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head runat="server">
+  
+    <%: Scripts.Render("~/bundles/modernizr") %>
+    <%: Scripts.Render("~/bundles/jquery") %>
+    <%: Scripts.Render("~/bundles/jqueryui") %>
+    <%: Scripts.Render("~/bundles/bootstrapjs") %>
+    <%: Scripts.Render("~/bundles/retaildemojs") %>
+   
+    <%: Styles.Render("~/bundles/bootstrap") %>
+    <%: Styles.Render("~/bundles/bootstraptheme") %>
+    <%: Styles.Render("~/bundles/appcss") %>
+    
+    
+    <link href="/assets/nvd3/src/nv.d3.css" rel="stylesheet" type="text/css" />
+    <script src="/assets/nvd3/lib/d3.v3.js"></script>
+    <script src="/assets/nvd3/nv.d3.js"></script>
+    <script src="/assets/nvd3/src/tooltip.js"></script>
+    <script src="/assets/nvd3/src/utils.js"></script>
+    <script src="/assets/nvd3/src/models/legend.js"></script>
+    <script src="/assets/nvd3/src/models/axis.js"></script>
+    <script src="/assets/nvd3/src/models/multiBar.js"></script>
+    <script src="/assets/nvd3/src/models/multiBarChart.js"></script>
+    <script type="text/javascript" src="http://ecn.dev.virtualearth.net/mapcontrol/mapcontrol.ashx?v=7.0"></script>
+    <script src="/Scripts/bootstrap-growl.min.js"></script>
+  
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+   
+    <script>
+        $(function () {
+            var url = window.location.pathname;
+            var urlRegExp = new RegExp(url.replace(/\/$/, '') + "$");
+           if (urlRegExp != '/$/') {
+               $('.nav li').each(function () {
+                   $(this).removeClass("active");
+                   var anchor = $('a', this);
+                   // and test its normalized href against the url pathname regexp
+                   if (urlRegExp.test($(anchor).attr("href").replace(/\/$/, ''))) {
+                       $(this).addClass('active');
+                   }
+               });
+           }
+        });
+    </script>
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+  
+    <form id="form1" runat="server"  class="form-horizontal" role="form">
+
+         <asp:ContentPlaceHolder ID="ContentPlaceHolder2" runat="server">
+         </asp:ContentPlaceHolder>
+        <div class="container-fluid">
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+    </form>
+</body>
+</html>

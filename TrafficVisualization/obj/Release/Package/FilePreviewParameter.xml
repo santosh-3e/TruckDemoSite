@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="IIS Web Application Name" description="" value="iot-truck-demo" tags="IisApp">
+    <parameterEntry kind="ProviderPath" scope="IisApp" match="^D:\\ThirdEyeCss\\TruckDemo\\TrafficVisualization\\TrafficVisualization\\obj\\Release\\Package\\PackageTmp$" />
+    <parameterEntry kind="ProviderPath" scope="setAcl" match="^D:\\ThirdEyeCss\\TruckDemo\\TrafficVisualization\\TrafficVisualization\\obj\\Release\\Package\\PackageTmp$" />
+  </parameter>
+  <parameter name="TruckDemoConnString-Web.config Connection String" description="" value="Data Source=tcp:q44uok20o1.database.windows.net,1433;Initial Catalog=TruckDB;Integrated Security=False;User ID=thirdeyecss@q44uok20o1;Password=BigData257!;Connect Timeout=30;Encrypt=True" tags="">
+    <parameterEntry kind="XmlFile" scope="D:\\ThirdEyeCss\\TruckDemo\\TrafficVisualization\\TrafficVisualization\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='TruckDemoConnString']/@connectionString" />
+  </parameter>
+</parameters>
