@@ -1,7 +1,7 @@
 ﻿body {
     //padding-top: 70px;
     padding-bottom: 70px;
-    background-color: white;
+    background-color: black;
     /*color: #FFFFFF;*/
 }
 
@@ -44,7 +44,7 @@
     height: 80px;
     border: none;
 }
- 
+
 .tab {
     height: 480px;
 }
@@ -58,11 +58,12 @@
     .location_div h4 {
         color: black !important;
     }
-     
+
+
 .truckinfo_div {
     margin-bottom: 20px;
     margin-left: 15px;
-    background-color: #92D050; 
+    background-color: #92D050;
     color: black !important;
 }
 
@@ -82,19 +83,5 @@
 
 #aboutus li a:hover{
     color:black !important;
-    background-color:darkgrey !important;
-}
-
-.nav li.active a{
-    background-color:#1C3052   !important;
-    color:white;
-}
-.nav li a{
-    background-color:#90B0D4 !important; 
-    color:white;
-}
-
-.nav li.active a:hover{
-    background-color:#1C3052   !important;
-    color:white;
+    background-color:white !important;
 }

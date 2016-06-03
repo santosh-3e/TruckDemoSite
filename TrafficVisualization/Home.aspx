@@ -7,8 +7,8 @@
     <div class="row">
         <div class="col-md-8">
             <h2 style="margin-top:5px; height:60px">
-                <a href="http://thirdeyecss.com/eyera" style="color: black; text-decoration:none">
-                <img src="Images/eyera-small.png" style="width: 200px; height: auto; margin-bottom: 13px" />
+                <a href="http://thirdeyecss.com/eyera" style="color: white; text-decoration:none">
+                <img src="Images/eyera-small-white.png" style="width: 200px; height: auto; margin-bottom: 13px" />
                 -&nbsp;&nbsp;&nbsp;Fleet Analytics Demo
                 </a>
 
@@ -46,7 +46,7 @@
             
             <ul class="nav nav-pills"  id="aboutus">
                 <li role="presentation" >
-                    <a href="http://thirdeyecss.com/about-us/" style="color:black;font-size: 15px"><b>About Third Eye</b></a>
+                    <a href="http://thirdeyecss.com/about-us/" style="color:white;font-size: 15px">About Third Eye</a>
                 </li>
                <%-- <li>
                     <a href="http://thirdeyecss.com/contact-us/" style="color: white; font-size: 15px">Contact</a>
