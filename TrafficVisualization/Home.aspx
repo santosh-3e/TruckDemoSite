@@ -155,8 +155,9 @@
 
     <script src="/Scripts/realtimedashboard.js"></script>
       <script src="/Scripts/settings.js"></script>
-   <script src="http://next.walkhub.net/assets/client.js" defer></script>
+
+   <%--<script src="http://next.walkhub.net/assets/client.js" defer></script>
 <script src="http://next.walkhub.net/assets/embed.js" defer></script>
 <a class="walkthroughbutton" data-origin="http://next.walkhub.net/" data-position="bottom-right" data-search="localhost" href="http://next.walkhub.net/"></a>
-<a class="walkthroughbutton" data-origin="http://next.walkhub.net/" data-position="bottom-right" href="http://next.walkhub.net/"></a>
+<a class="walkthroughbutton" data-origin="http://next.walkhub.net/" data-position="bottom-right" href="http://next.walkhub.net/"></a>--%>
 </asp:Content>
