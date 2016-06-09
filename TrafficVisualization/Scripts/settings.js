@@ -6,13 +6,12 @@
    
 //});
 
-
 $(document).ready(function () {
     // Instance the tour
     var tour = new Tour({
         steps: [
         {
-            element: ".mystartbtn",
+            element: "#mystartbtn",
             title:"Start Demo",
             content: "Start the demo by clicking here.",
             placement:"bottom"

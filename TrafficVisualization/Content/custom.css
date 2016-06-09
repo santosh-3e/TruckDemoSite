@@ -98,6 +98,7 @@
     background-color:#1C3052   !important;
     color:white;
 }
+
 .popover-content{
 background-color:forestgreen;
 color:white;
@@ -124,5 +125,4 @@ background-color:forestgreen;
 color:white;
 font-weight: bold;
 font-size:medium;
-border-bottom:none;
 }
