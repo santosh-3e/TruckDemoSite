@@ -12,28 +12,34 @@ $(document).ready(function () {
     var tour = new Tour({
         steps: [
         {
-            element: "#resetDashboard",
+            element: ".mystartbtn",
+            title:"Start Demo",
             content: "Start the demo by clicking here.",
             placement:"bottom"
         },
         {
-            element: "#truck1_link",            
+            element: "#truck1_link",
+            title: "Truck Information",
             content: "Each Truck is carrying different types of food.",
             placement: "bottom"
         },
         {
-            element: "#truck_det",            
+            element: ".mylocationdiv",
+            title: "Current Location Information",
             content: "Real time computation of latitude & longitude information into its geographical location."
         },
         {
             element: "#chart3",
+            title: "Truck Details",
             html:"true",
-            content: "Data from 6 types of sensors installed in each truck being displayed in real time<br />1.Carbon-di-oxide<br />2.Oxygen<br />3.Moisture<br />4.Ethylene<br />5.Pressure<br />6.Temperature"
+            content: "Data from 6 types of sensors installed in each truck being displayed in real time<br />1.Carbon-di-oxide<br />2.Oxygen<br />3.Moisture<br />4.Ethylene<br />5.Pressure<br />6.Temperature",
+            placement: "top"
         },
         {
-            element: "#score_prediction",            
+            element: "#score_prediction",
+            title: "Predictions Based On Sensor Readings",
             content: "Machine Learning scoring of data in real time to determine if the food would go bad in next 4 hours",
-            placement: "bottom"
+            placement: "left"
         }
         ],
         animation: true,

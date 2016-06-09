@@ -98,3 +98,31 @@
     background-color:#1C3052   !important;
     color:white;
 }
+.popover-content{
+background-color:forestgreen;
+color:white;
+}
+
+.popover.right .arrow:after {
+  border-right-color: forestgreen;
+}
+
+.popover.bottom .arrow:after {
+  border-bottom-color: forestgreen;
+}
+
+.popover.top .arrow:after {
+  border-top-color: forestgreen;
+}
+
+.popover.left .arrow:after {
+  border-left-color: forestgreen;
+}
+
+.popover-title{
+background-color:forestgreen;
+color:white;
+font-weight: bold;
+font-size:medium;
+border-bottom:none;
+}

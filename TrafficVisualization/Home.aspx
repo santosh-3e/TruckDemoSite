@@ -19,7 +19,7 @@
             
             <div class="btn-group btn-group-sm pull-right" style="margin-top:5px">
 
-                <input type="checkbox" class="btn" id="resetDashboard"
+                <input type="checkbox" class="btn mystartbtn" id="resetDashboard"
                     eventfor="2" btn="toggleBtn"
                     data-on-text="STOP"
                     data-off-text="START"
@@ -45,8 +45,8 @@
             </div>
             
             <ul class="nav nav-pills"  id="aboutus">
-                <li role="presentation" >
-                    <a href="http://thirdeyecss.com/about-us/" style="color:black;font-size: 15px"><b>About Third Eye</b></a>
+                <li role="presentation">
+                    <a href="http://thirdeyecss.com/about-us/" style="color:black"><b>About Third Eye</b></a>
                 </li>
                <%-- <li>
                     <a href="http://thirdeyecss.com/contact-us/" style="color: white; font-size: 15px">Contact</a>
