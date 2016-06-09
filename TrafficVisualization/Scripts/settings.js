@@ -6,6 +6,7 @@
    
 //});
 
+
 $(document).ready(function () {
     // Instance the tour
     var tour = new Tour({

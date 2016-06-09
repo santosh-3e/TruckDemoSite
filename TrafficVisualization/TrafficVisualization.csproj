@@ -142,6 +142,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\bootstrap-tour.css" />
+    <Content Include="Content\bootstrap-tour.min.css" />
     <Content Include="Images\eyera-logo-2.jpg" />
     <Content Include="Images\eyera-small-white.png" />
     <Content Include="Images\eyera-small.png" />
@@ -734,6 +736,8 @@
     <Content Include="assets\nvd3\test\testScript.js" />
     <Content Include="assets\nvd3\test\teststyle.css" />
     <Content Include="Scripts\bootstrap-switch.min.js" />
+    <Content Include="Scripts\bootstrap-tour.js" />
+    <Content Include="Scripts\bootstrap-tour.min.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\Highcharts-4.0.1\js\adapters\standalone-framework.js" />
