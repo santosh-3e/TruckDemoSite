@@ -4,6 +4,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+
     <div class="row">
         <div class="col-md-8">
             <h2 style="margin-top: 5px; height: 60px">
@@ -13,6 +14,7 @@
                 </a>
             </h2>
         </div>
+
         <div class="col-md-4" style="margin-top: 15px">
             <div class="btn-group btn-group-sm pull-right" style="margin-top: 5px">
                 <span id="mystartbtn">
@@ -53,6 +55,37 @@
 
         </div>
     </div>
+
+    <div class="row">
+        <div class="col-md-8">
+            <h2 style="margin-top: 5px; height: 60px">
+                <a href="http://thirdeyecss.com/eyera" style="color: black; text-decoration: none">
+                    <img src="Images/eyera-small.png" style="width: 200px; height: auto; margin-bottom: 13px" />
+                    -&nbsp;&nbsp;&nbsp;Fleet Analytics Demo
+                </a>
+            </h2>
+          <span>Solutions for Internet of things</span>
+        </div>
+
+        <div class="col-md-4" style="margin-top: 15px">
+                    
+             <ul class="nav nav-pills" id="aboutus">
+                <li role="presentation">
+                    <a href="http://thirdeyecss.com/about-us/" style="color: black"><b>Talk to Third Eye</b></a>
+                </li>
+
+                  <li role="presentation">
+                    <a href="http://thirdeyecss.com/about-us/" style="color: black"><b>Technology</b></a>
+                </li>
+                <%-- <li>
+                    <a href="http://thirdeyecss.com/contact-us/" style="color: white; font-size: 15px">Contact</a>
+                </li>--%>
+            </ul>
+
+        </div>
+    </div>
+
+
 
     <input type="text" id="truck" value="1" class="hidden" />
 
