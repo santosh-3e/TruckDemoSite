@@ -87,42 +87,42 @@
 
 .nav li.active a{
     background-color:#1C3052   !important;
-    color:white;
+    color:black;
 }
 .nav li a{
     background-color:#90B0D4 !important; 
-    color:white;
+    color:black;
 }
 
 .nav li.active a:hover{
     background-color:#1C3052   !important;
-    color:white;
+    color:black;
 }
 
 .popover-content{
-background-color:forestgreen;
-color:white;
+background-color:#b1ee70;
+color:black;
 }
 
 .popover.right .arrow:after {
-  border-right-color: forestgreen;
+  border-right-color: #b1ee70;
 }
 
 .popover.bottom .arrow:after {
-  border-bottom-color: forestgreen;
+  border-bottom-color: #b1ee70;
 }
 
 .popover.top .arrow:after {
-  border-top-color: forestgreen;
+  border-top-color: #b1ee70;
 }
 
 .popover.left .arrow:after {
-  border-left-color: forestgreen;
+  border-left-color: #b1ee70;
 }
 
 .popover-title{
-background-color:forestgreen;
-color:white;
+background-color:#b1ee70;
+color:black;
 font-weight: bold;
 font-size:medium;
 }

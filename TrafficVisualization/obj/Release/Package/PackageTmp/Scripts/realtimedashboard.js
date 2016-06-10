@@ -731,7 +731,7 @@ function detailsInfo(d) {
             + '<div class="panel-body"><div class="row"><div class="' + headingwidth + '"><b>Truck Id.</b></div><div class="' + datagwidth + '">: ' + currentTruck.Trucknumber + '</div></div>'
             + '<div class="row"><div class="' + headingwidth + '"><b>Driver Name</b></div><div class="' + datagwidth + '">: ' + currentTruck.Drivername + '</div></div></div></div>'
             + '<div class="panel panel-success"><div class="panel-heading">Current Location</div>'
-            + '<div class="panel-body"><div class="row"><div class="' + headingwidth + '"><b>Latitude</b></div><div class="' + datagwidth + '">: ' + d.Latitude + '</div></div>'
+            + '<div class="panel-body mylocationdiv"><div class="row"><div class="' + headingwidth + '"><b>Latitude</b></div><div class="' + datagwidth + '">: ' + d.Latitude + '</div></div>'
             + '<div class="row"><div class="' + headingwidth + '"><b>Longitude</b></div><div class="' + datagwidth + '">: ' + d.Longitude + '</div></div>'
             //+ '<div class="row"><div class="' + headingwidth + '"><b>Location</b></div><div class="' + datagwidth + '">: ' + d.Address + '</div></div>'
             + '</div></div>'

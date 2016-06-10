@@ -6,27 +6,25 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="row">
         <div class="col-md-8">
-            <h2 style="margin-top:5px; height:60px">
-                <a href="http://thirdeyecss.com/eyera" style="color: black; text-decoration:none">
-                <img src="Images/eyera-small.png" style="width: 200px; height: auto; margin-bottom: 13px" />
-                -&nbsp;&nbsp;&nbsp;Fleet Analytics Demo
+            <h2 style="margin-top: 5px; height: 60px">
+                <a href="http://thirdeyecss.com/eyera" style="color: black; text-decoration: none">
+                    <img src="Images/eyera-small.png" style="width: 200px; height: auto; margin-bottom: 13px" />
+                    -&nbsp;&nbsp;&nbsp;Fleet Analytics Demo
                 </a>
-
             </h2>
-
         </div>
-        <div class="col-md-4" style="margin-top:15px">
-            
-            <div class="btn-group btn-group-sm pull-right" style="margin-top:5px">
-
-                <input type="checkbox" class="btn" id="resetDashboard"
-                    eventfor="2" btn="toggleBtn"
-                    data-on-text="STOP"
-                    data-off-text="START"
-                    data-size="small"
-                    data-off-color="info"
-                    data-handle-width="30px"
-                    name="start-datafeed" />
+        <div class="col-md-4" style="margin-top: 15px">
+            <div class="btn-group btn-group-sm pull-right" style="margin-top: 5px">
+                <span id="mystartbtn">
+                    <input type="checkbox" class="btn" id="resetDashboard"
+                        eventfor="2" btn="toggleBtn"
+                        data-on-text="STOP"
+                        data-off-text="START"
+                        data-size="small"
+                        data-off-color="info"
+                        data-handle-width="30px"
+                        name="start-datafeed" />
+                </span>
                 <!--<input type="checkbox" class="btn" id="btnStartFeed" eventfor="0" btn="toggleBtn"
                 data-on-text="Stop Data Feed"
                 data-off-text="Start Data Feed"
@@ -43,19 +41,19 @@
                     data-handle-width="100px"
                     name="start-datafeed" />
             </div>
-            
-            <ul class="nav nav-pills"  id="aboutus">
-                <li role="presentation" >
-                    <a href="http://thirdeyecss.com/about-us/" style="color:black;font-size: 15px"><b>About Third Eye</b></a>
+
+            <ul class="nav nav-pills" id="aboutus">
+                <li role="presentation">
+                    <a href="http://thirdeyecss.com/about-us/" style="color: black"><b>About Third Eye</b></a>
                 </li>
-               <%-- <li>
+                <%-- <li>
                     <a href="http://thirdeyecss.com/contact-us/" style="color: white; font-size: 15px">Contact</a>
                 </li>--%>
             </ul>
-            
+
         </div>
     </div>
-    
+
     <input type="text" id="truck" value="1" class="hidden" />
 
     <div class="row">
@@ -91,16 +89,15 @@
             </div>
         </div>
 
-        <div class="col-md-3" >
+        <div class="col-md-3">
             <div class="row">
                 <div class="col-md-12">
-                   
+
                     <div id="score_prediction">
-                        
                     </div>
                 </div>
             </div>
-           
+
         </div>
     </div>
     <div class="row">
@@ -108,7 +105,7 @@
     </div>
     <div class="row">
         <div class="col-md-2">
-            <div id="chart1" class="chart chart1">  
+            <div id="chart1" class="chart chart1">
                 <svg></svg>
             </div>
         </div>
@@ -137,12 +134,12 @@
                 <svg></svg>
             </div>
         </div>
-        
-      
+
+
     </div>
-    
-    
-<%--<div data-growl="container" class="alert" role="alert">
+
+
+    <%--<div data-growl="container" class="alert" role="alert">
 	<button type="button" class="close" data-growl="dismiss">
 		<span aria-hidden="true">×</span>
 		<span class="sr-only">Close</span>
@@ -154,6 +151,10 @@
 </div>--%>
 
     <script src="/Scripts/realtimedashboard.js"></script>
-      <script src="/Scripts/settings.js"></script>
-   
+    <script src="/Scripts/settings.js"></script>
+
+    <%--<script src="http://next.walkhub.net/assets/client.js" defer></script>
+<script src="http://next.walkhub.net/assets/embed.js" defer></script>
+<a class="walkthroughbutton" data-origin="http://next.walkhub.net/" data-position="bottom-right" data-search="localhost" href="http://next.walkhub.net/"></a>
+<a class="walkthroughbutton" data-origin="http://next.walkhub.net/" data-position="bottom-right" href="http://next.walkhub.net/"></a>--%>
 </asp:Content>
