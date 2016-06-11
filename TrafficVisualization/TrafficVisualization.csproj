@@ -147,6 +147,8 @@
     <Content Include="Images\eyera-logo-2.jpg" />
     <Content Include="Images\eyera-small-white.png" />
     <Content Include="Images\eyera-small.png" />
+    <Content Include="Images\startbutton.PNG" />
+    <Content Include="Images\TElogo.PNG" />
     <Content Include="Scripts\bootstrap-growl.min.js" />
     <Content Include="bingmap.aspx" />
     <Content Include="Content\bootstrap-switch.min.css" />

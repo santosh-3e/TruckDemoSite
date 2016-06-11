@@ -80,23 +80,18 @@
     vertical-align: middle;
 }
 
-#aboutus li a:hover{
-    color:black !important;
-    background-color:darkgrey !important;
-}
-
-.nav li.active a{
+#truckmenu.nav li.active a{
     background-color:#1C3052   !important;
-    color:black;
+    color:white;
 }
-.nav li a{
+#truckmenu.nav li a{
     background-color:#90B0D4 !important; 
-    color:black;
+    color:white;
 }
 
-.nav li.active a:hover{
+#truckmenu.nav li.active a:hover{
     background-color:#1C3052   !important;
-    color:black;
+    color:white;
 }
 
 .popover-content{

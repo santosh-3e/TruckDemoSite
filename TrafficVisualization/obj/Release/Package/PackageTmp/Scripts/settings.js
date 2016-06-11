@@ -48,10 +48,10 @@ $(document).ready(function () {
     });
 
     // Initialize the tour
-    tour.init();
+    //tour.init();
 
     // Start the tour
-    tour.start();
+  //  tour.start();
 });
 
 //$(document).ready(function () {

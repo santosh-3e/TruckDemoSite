@@ -4,20 +4,22 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-
+    <input type="text" id="truck" value="1" class="hidden" />
     <div class="row">
-        <div class="col-md-8">
-            <h2 style="margin-top: 5px; height: 60px">
+        <div class="col-md-6">
+            <h2 style="margin-top: 5px; height: 50px">
                 <a href="http://thirdeyecss.com/eyera" style="color: black; text-decoration: none">
                     <img src="Images/eyera-small.png" style="width: 200px; height: auto; margin-bottom: 13px" />
                     -&nbsp;&nbsp;&nbsp;Fleet Analytics Demo
                 </a>
             </h2>
+            <p style="font-size:20px; padding-left:15px">Solutions for Internet of things</p>
         </div>
 
-        <div class="col-md-4" style="margin-top: 15px">
+        <div class="col-md-6" style="margin-top: 15px">
             <div class="btn-group btn-group-sm pull-right" style="margin-top: 5px">
-                <span id="mystartbtn">
+                <div id="mystartbtn" style="display:inline-block">
+
                     <input type="checkbox" class="btn" id="resetDashboard"
                         eventfor="2" btn="toggleBtn"
                         data-on-text="STOP"
@@ -26,15 +28,11 @@
                         data-off-color="info"
                         data-handle-width="30px"
                         name="start-datafeed" />
-                </span>
-                <!--<input type="checkbox" class="btn" id="btnStartFeed" eventfor="0" btn="toggleBtn"
-                data-on-text="Stop Data Feed"
-                data-off-text="Start Data Feed"
-                data-size="small"
-                data-off-color="info"
-                data-handle-width="100px"
-                name="start-datafeed" />-->
-                <input type="checkbox" class="btn" id="btnChangeData" eventfor="1" btn="toggleBtn"
+                </div>
+
+                <input type="checkbox" class="btn" id="btnChangeData" 
+                    eventfor="1" 
+                    btn="toggleBtn"
                     data-on-text="+Ve Prediction"
                     data-off-text="-Ve Prediction"
                     data-size="small"
@@ -43,54 +41,23 @@
                     data-handle-width="100px"
                     name="start-datafeed" />
             </div>
-
-            <ul class="nav nav-pills" id="aboutus">
-                <li role="presentation">
-                    <a href="http://thirdeyecss.com/about-us/" style="color: black"><b>About Third Eye</b></a>
-                </li>
-                <%-- <li>
-                    <a href="http://thirdeyecss.com/contact-us/" style="color: white; font-size: 15px">Contact</a>
-                </li>--%>
-            </ul>
-
-        </div>
-    </div>
-
-    <div class="row">
-        <div class="col-md-8">
-            <h2 style="margin-top: 5px; height: 60px">
-                <a href="http://thirdeyecss.com/eyera" style="color: black; text-decoration: none">
-                    <img src="Images/eyera-small.png" style="width: 200px; height: auto; margin-bottom: 13px" />
-                    -&nbsp;&nbsp;&nbsp;Fleet Analytics Demo
-                </a>
-            </h2>
-          <span>Solutions for Internet of things</span>
-        </div>
-
-        <div class="col-md-4" style="margin-top: 15px">
-                    
+                      
              <ul class="nav nav-pills" id="aboutus">
                 <li role="presentation">
-                    <a href="http://thirdeyecss.com/about-us/" style="color: black"><b>Talk to Third Eye</b></a>
+                    <a href="http://thirdeyecss.com/about-us/" style="color: black">
+                        <img src="Images/TElogo.png" style="height:50px" />&nbsp; <b>Talk to Third Eye</b></a>
                 </li>
 
                   <li role="presentation">
-                    <a href="http://thirdeyecss.com/about-us/" style="color: black"><b>Technology</b></a>
+                    <a href="http://thirdeyecss.com/about-us/" style="color: black; padding-top:25px; padding-bottom:25px"><b>Technology</b></a>
                 </li>
-                <%-- <li>
-                    <a href="http://thirdeyecss.com/contact-us/" style="color: white; font-size: 15px">Contact</a>
-                </li>--%>
             </ul>
-
         </div>
     </div>
 
-
-
-    <input type="text" id="truck" value="1" class="hidden" />
-
-    <div class="row">
-        <ul class="nav nav-tabs" role="tablist">
+    <div id="DemoDiv" style="display:none">
+          <div class="row">
+        <ul class="nav nav-tabs" role="tablist" id="truckmenu">
             <li class="active">
                 <a href="#truck1" id="truck1_link" role="tab" data-toggle="tab" onclick="(function(e, id){togglemap(e, id); })(event, 1)">Truck 1- Sushi</a>
             </li>
@@ -167,27 +134,14 @@
                 <svg></svg>
             </div>
         </div>
-
-
     </div>
-
-
-    <%--<div data-growl="container" class="alert" role="alert">
-	<button type="button" class="close" data-growl="dismiss">
-		<span aria-hidden="true">×</span>
-		<span class="sr-only">Close</span>
-	</button>
-	<span data-growl="icon"></span>
-	<span data-growl="title"></span>
-	<span data-growl="message"></span>
-	<a href="#" data-growl="url"></a>
-</div>--%>
+    </div>
+   
+     <div id="StartDiv" style="text-align:center; padding-top:100px; display:none">
+        <a href="" id="cmdSTartDemo"><img src="Images/Play.png" /></a>
+        <h1 style="font-weight:bold">Start Fleet Analytics Demo</h1>
+    </div>
+  
 
     <script src="/Scripts/realtimedashboard.js"></script>
-    <script src="/Scripts/settings.js"></script>
-
-    <%--<script src="http://next.walkhub.net/assets/client.js" defer></script>
-<script src="http://next.walkhub.net/assets/embed.js" defer></script>
-<a class="walkthroughbutton" data-origin="http://next.walkhub.net/" data-position="bottom-right" data-search="localhost" href="http://next.walkhub.net/"></a>
-<a class="walkthroughbutton" data-origin="http://next.walkhub.net/" data-position="bottom-right" href="http://next.walkhub.net/"></a>--%>
-</asp:Content>
+  </asp:Content>
