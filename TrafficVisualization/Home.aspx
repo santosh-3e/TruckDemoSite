@@ -29,17 +29,20 @@
                         data-handle-width="30px"
                         name="start-datafeed" />
                 </div>
+                 <div id="adversebutton" style="display:inline-block">
 
                 <input type="checkbox" class="btn" id="btnChangeData" 
                     eventfor="1" 
                     btn="toggleBtn"
                     data-on-text="+Ve Prediction"
-                    data-off-text="-Ve Prediction"
+                    data-off-text="Adverse Condition"
                     data-size="small"
                     data-off-color="warning"
                     data-on-color="success"
                     data-handle-width="100px"
-                    name="start-datafeed" />
+                    name="start-datafeed" />    
+
+                 </div>
             </div>
                       
              <ul class="nav nav-pills" id="aboutus">
@@ -59,16 +62,16 @@
           <div class="row">
         <ul class="nav nav-tabs" role="tablist" id="truckmenu">
             <li class="active">
-                <a href="#truck1" id="truck1_link" role="tab" data-toggle="tab" onclick="(function(e, id){togglemap(e, id); })(event, 1)">Truck 1- Sushi</a>
+                <a href="#truck1" id="truck1_link" role="tab" data-toggle="tab" onclick="(function(e, id){togglemap(e, id); })(event, 1)">Truck 1 - Sushi</a>
             </li>
             <li>
-                <a href="#truck2" role="tab" data-toggle="tab" onclick="(function(e, id){togglemap(e, id); })(event, 2)">Truck 2- Vegetables</a>
+                <a href="#truck2" role="tab" data-toggle="tab" onclick="(function(e, id){togglemap(e, id); })(event, 2)">Truck 2 - Vegetables</a>
             </li>
             <li>
-                <a href="#truck3" role="tab" data-toggle="tab" onclick="(function(e, id){togglemap(e, id); })(event, 3)">Truck 3- Fruits</a>
+                <a href="#truck3" role="tab" data-toggle="tab" onclick="(function(e, id){togglemap(e, id); })(event, 3)">Truck 3 - Fruits</a>
             </li>
             <li>
-                <a href="#truck4" role="tab" data-toggle="tab" onclick="(function(e, id){togglemap(e, id); })(event, 4)">Truck 4- Dried Fruits</a>
+                <a href="#truck4" role="tab" data-toggle="tab" onclick="(function(e, id){togglemap(e, id); })(event, 4)">Truck 4 - Dried Fruits</a>
             </li>
         </ul>
     </div>
@@ -79,21 +82,20 @@
                 <div id='truck_det' class='detail col-md-12'></div>
             </div>
         </div>
-
         <div class="col-md-6">
             <div class="row">
                 <div class='tab col-md-12'>
-                    <div id='truck_map'>
+                    <div id='truck_map'  
+                        style="position:absolute; width:95%; height:478px;"
+                        >
                     </div>
                 </div>
             </div>
         </div>
-
         <div class="col-md-3">
             <div class="row">
                 <div class="col-md-12">
-
-                    <div id="score_prediction">
+                    <div id="score_prediction" style="height:478px; border: solid 1px red">
                     </div>
                 </div>
             </div>
@@ -143,5 +145,15 @@
     </div>
   
 
+    <nav class="navbar navbar-default navbar-fixed-bottom">
+  <div class="container-fluid">
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav pull-right">
+        <li><a href="http://thirdeyecss.com/">Third Eye Consulting Services & Solutions LLC.</a></li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
     <script src="/Scripts/realtimedashboard.js"></script>
   </asp:Content>

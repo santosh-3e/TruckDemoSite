@@ -51,7 +51,7 @@ var truck1 = {
 };
 
 var truck2 = {
-    ProductName: "vegetables",
+    ProductName: "Vegetables",
     Trucknumber: 2,
     ScoreLabel: 1,
     Drivername: "Mark D",
@@ -73,7 +73,7 @@ var truck2 = {
 };
 
 var truck3 = {
-    ProductName: "fruits",
+    ProductName: "Fruits",
     Trucknumber: 3,
     ScoreLabel: 1,
     Drivername: "Scott J",
@@ -95,7 +95,7 @@ var truck3 = {
 };
 
 var truck4 = {
-    ProductName: "dried fruits",
+    ProductName: "Dried fruits",
     Trucknumber: 4,
     ScoreLabel: 1,
     Drivername: "Andrews P",
@@ -126,11 +126,90 @@ var StartRealTimeDashboard = false;
 
 var counter = 0;
 $(document).ready(function () {
+
+    // Instance the tour
+    $("#StartDiv").show();
+    $("#cmdSTartDemo").on("click", function () {
+        $("#DemoDiv").show();
+        $("#StartDiv").hide();
+
+        $('#resetDashboard').bootstrapSwitch("state", true, true);
+        //Start the tour
+        setTimeout(function () {
+            tour.start();
+        }, 2000);
+      
+        return false;
+    });
+    var tour = new Tour({
+        steps: [
+        {
+            element: "#mystartbtn",
+            title: "Start/Stop Demo",
+            content: "Start/Stop the demo by clicking here.",
+            placement: "bottom"
+        },
+        {
+            element: "#truck1_link",
+            title: "Truck Information",
+            content: "Each Truck is carrying different types of food.",
+            placement: "bottom"
+        },
+        {
+            element: ".mylocationdiv",
+            title: "Current Location Information",
+            content: "Real time computation of latitude & longitude information into its geographical location."
+        },
+        {
+            element: "#chart3",
+            title: "Truck Sensor Details",
+            html: "true",
+            content: "Data from 6 types of sensors installed in each truck being displayed in real time<br />1.Carbon-di-oxide<br />2.Oxygen<br />3.Moisture<br />4.Ethylene<br />5.Pressure<br />6.Temperature",
+            placement: "top"
+        },
+            {
+                element: "#divSafe",
+                title: "Predictions Based On Sensor Readings",
+                content: "Machine Learning scoring of data in real time to determine if the food would be safe for next 4 hours",
+                placement: "bottom",
+                onNext: function () {
+                    $('#btnChangeData').bootstrapSwitch("state", true, true);
+                }
+            },
+
+        {
+            element: "#adversebutton",
+            title: "Control Positive or Adverse condition",
+            content: "Control Positive or Adverse condition by clicking here.",
+            placement: "bottom"
+        },
+
+            {
+                element: "#divSafe",
+                title: "Predictions Based On Sensor Readings",
+                content: "Machine Learning scoring of data in real time to determine if the food would go bad in next 4 hours",
+                placement: "bottom"
+            },
+
+        //{
+        //    element: "#divSafe",
+        //    title: "",
+        //    content: "Machine Learning has scored the data in real time and determined that the [food type]will go bad in next 4 hours.<br>The Trucking company can now take corrective actions to stop the [food type] from going bad.",
+        //    placement: "bottom"
+        //}
+        ],
+        animation: true,
+        container: "body",
+        backdrop: false,
+        storage: false
+    });
+    // Initialize the tour
+    tour.init();
+
    // try {
-
     $("[btn='toggleBtn']").bootstrapSwitch();
-    $('input[btn="toggleBtn"]').on('switchChange.bootstrapSwitch', function (event, state) {
-
+    $('#resetDashboard').on('switchChange.bootstrapSwitch', function (event, state) {
+        console.log($(this).attr("eventfor"));
         // Start Stop Button Event
         if ($(this).attr("eventfor") === "2") {
             //control data feeding
@@ -165,11 +244,10 @@ $(document).ready(function () {
                 StartRealTimeDashboard = true;
             } else {
                 StartRealTimeDashboard = false;
-              
             }
         }
 
-        if ($(this).attr("eventfor") == "1") // DOM element
+        if ($(this).attr("eventfor") == "1") // DOM elem  ent
         {
             //Control data type
             if ($('#btnStartFeed').bootstrapSwitch('state')) {
@@ -258,9 +336,11 @@ function CallHBaseApi() {
         dataType: "json"
     }).success(function (data) {
         var data1 = jQuery.parseJSON(data);
+        console.log(data);
         counter++;
         IsFetchingTruckData = false;
         $.each(data1, function (index, d) {
+           
             try {
                 
                 if (d.TruckID === "946891911") {
@@ -419,7 +499,6 @@ function CallHBaseApi() {
                     }
                     currentTruck = truck4;
                 }
-
                 if (currentTruck.Trucknumber == $("#truck").val()) {
 
                     var locstart = new Microsoft.Maps.Location(currentTruck.StartLat, currentTruck.StartLong);
@@ -451,7 +530,7 @@ function CallHBaseApi() {
                             }
                         });
                     }
-
+                  
                     var line = new Microsoft.Maps.Polyline(currentTruck.geolLocations.sort(function(obj1, obj2) { return obj1.latitude - obj2.latitude; }));
                     map.entities.clear(); // = [];
 
@@ -497,7 +576,7 @@ function viewChanged(e) {
 function displayDownCharts(d) {
 
     if ($('#truck').val() == currentTruck.Trucknumber) {
-        var message = "<strong>Vegetables would be SAFE for next 4 hours</strong>.<br>-Prediction is based on the current sensor readings.";
+        var message = "<strong>" + currentTruck.ProductName + " would be <div  style='display:inline-block;background-color:#4B773A;color:white'>SAFE </div> for next 4 hours</strong>.<br>-Prediction is based on the current sensor readings.";
         var paneltype = 'panel-success';
         var headingwidth = 'col-md-6';
         var datagwidth = 'col-md-6';
@@ -505,7 +584,7 @@ function displayDownCharts(d) {
         if (d.ScoreLabel == 1) {
             paneltype = 'panel-danger';
             background = "bg-danger";
-            message = "<b>Vegetables would go BAD in next 4 hours</b>.<br>-Prediction is based on the current sensor readings.";
+            message = "<strong>" + currentTruck.ProductName + " would go <div style='display:inline-block;background-color:#DD0000;color:white'>BAD </div>in next 4 hours</strong>.<br>-Prediction is based on the current sensor readings.";
         }
 
         $("#score_prediction")
@@ -520,8 +599,7 @@ function displayDownCharts(d) {
                 + '<div class="row"><div class="' + headingwidth + '"><b>Ethylene</b></div><div class="' + datagwidth + '">: ' + d.Ethylene + '</div></div>'
                 + '<div class="row"><div class="' + headingwidth + '"><b>Pressure</b></div><div class="' + datagwidth + '">: ' + d.Pressure + '</div></div>'
                 + '<div class="row"><div class="' + headingwidth + '"><b>Temperature</b></div><div class="' + datagwidth + '">: ' + d.Temperature + '</div></div>'
-                + '<hr/><div class="row"><div class="col-md-12"><span class="list-group-item active"">' + message + '</span></div></div>'
-        
+                + '<hr/><div class="row"><div class="col-md-12"><div id="divSafe"><span class="list-group-item"" style="background-color:#90B0D4; text-align:center" >' + message + '</span></div></div></div>'
                 + '</div></div></div>'
             );
 

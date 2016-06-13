@@ -144,9 +144,11 @@
   <ItemGroup>
     <Content Include="Content\bootstrap-tour.css" />
     <Content Include="Content\bootstrap-tour.min.css" />
+    <Content Include="favicon.ico" />
     <Content Include="Images\eyera-logo-2.jpg" />
     <Content Include="Images\eyera-small-white.png" />
     <Content Include="Images\eyera-small.png" />
+    <Content Include="Images\favicon-16x16.png" />
     <Content Include="Images\startbutton.PNG" />
     <Content Include="Images\TElogo.PNG" />
     <Content Include="Scripts\bootstrap-growl.min.js" />
@@ -779,7 +781,6 @@
     <Content Include="Scripts\jquery-2.1.1.js" />
     <Content Include="Scripts\jquery-2.1.1.min.js" />
     <Content Include="Scripts\realtimedashboard.js" />
-    <Content Include="Scripts\settings.js" />
     <Content Include="TrafficVisualization.aspx" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
