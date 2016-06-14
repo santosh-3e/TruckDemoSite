@@ -18,37 +18,38 @@
 
         <div class="col-md-6" style="margin-top: 15px">
             <div class="btn-group btn-group-sm pull-right" style="margin-top: 5px">
-                <div id="mystartbtn" style="display:inline-block">
+                <div id="mystartbtn" style="display:none">
 
                     <input type="checkbox" class="btn" id="resetDashboard"
                         eventfor="2" btn="toggleBtn"
-                        data-on-text="STOP"
-                        data-off-text="START"
+                        data-on-text="Stop Demo"
+                        data-off-text="Start Demo"
                         data-size="small"
                         data-off-color="info"
-                        data-handle-width="30px"
+                        data-handle-width="70px"
                         name="start-datafeed" />
                 </div>
-                 <div id="adversebutton" style="display:inline-block">
 
-                <input type="checkbox" class="btn" id="btnChangeData" 
-                    eventfor="1" 
-                    btn="toggleBtn"
-                    data-on-text="+Ve Prediction"
-                    data-off-text="Adverse Condition"
-                    data-size="small"
-                    data-off-color="warning"
-                    data-on-color="success"
-                    data-handle-width="100px"
-                    name="start-datafeed" />    
+                <div id="adversebutton" style="display: inline-block">
 
-                 </div>
+                    <input type="checkbox" class="btn" id="btnChangeData"
+                        eventfor="1"
+                        btn="toggleBtn"
+                        data-on-text="Send Data for Good Conditions"
+                        data-off-text="Send Data for Adverse Conditions"
+                        data-size="small"
+                        data-off-color="warning"
+                        data-on-color="success"
+                        data-handle-width="180px"
+                        name="start-datafeed" />
+
+                </div>
             </div>
                       
              <ul class="nav nav-pills" id="aboutus">
                 <li role="presentation">
                     <a href="http://thirdeyecss.com/about-us/" style="color: black">
-                        <img src="Images/TElogo.png" style="height:50px" />&nbsp; <b>Talk to Third Eye</b></a>
+                        <img src="Images/TElogo.png" style="height:50px"/>&nbsp; <b>Talk to Third Eye</b></a>
                 </li>
 
                   <li role="presentation">
@@ -140,17 +141,16 @@
     </div>
    
      <div id="StartDiv" style="text-align:center; padding-top:100px; display:none">
-        <a href="" id="cmdSTartDemo"><img src="Images/Play.png" /></a>
-        <h1 style="font-weight:bold">Start Fleet Analytics Demo</h1>
+        <a href="" id="cmdSTartDemo"><img src="Images/start.PNG" /></a>
+        <h1 style="font-family:Calibri" font-weight:"bold">Start Fleet Analytics Demo</h1>
     </div>
-  
 
     <nav class="navbar navbar-default navbar-fixed-bottom">
   <div class="container-fluid">
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav pull-right">
-        <li><a href="http://thirdeyecss.com/">Third Eye Consulting Services & Solutions LLC.</a></li>
+        <li><a href="http://thirdeyecss.com/">“© 2016. All Rights Reserved. Third Eye Consulting Services & Solutions LLC.”</a></li>
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->

@@ -149,6 +149,7 @@
     <Content Include="Images\eyera-small-white.png" />
     <Content Include="Images\eyera-small.png" />
     <Content Include="Images\favicon-16x16.png" />
+    <Content Include="Images\start.PNG" />
     <Content Include="Images\startbutton.PNG" />
     <Content Include="Images\TElogo.PNG" />
     <Content Include="Scripts\bootstrap-growl.min.js" />

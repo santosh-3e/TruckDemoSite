@@ -326,7 +326,6 @@ D:\ThirdEye\Connected Cars\TrafficVisualization\TrafficVisualization\TrafficVisu
 D:\ThirdEye\Connected Cars\TrafficVisualization\TrafficVisualization\TrafficVisualization\bin\System.Web.Http.xml
 D:\ThirdEye\Connected Cars\TrafficVisualization\TrafficVisualization\TrafficVisualization\bin\System.Web.Http.WebHost.xml
 D:\ThirdEye\Connected Cars\TrafficVisualization\TrafficVisualization\TrafficVisualization\bin\System.Web.Optimization.xml
-D:\ThirdEye\Connected Cars\TrafficVisualization\TrafficVisualization\TrafficVisualization\obj\Debug\TrafficVisualization.csprojResolveAssemblyReference.cache
 D:\ThirdEye\Connected Cars\TrafficVisualization\TrafficVisualization\TrafficVisualization\obj\Debug\TrafficVisualization.dll
 D:\ThirdEye\Connected Cars\TrafficVisualization\TrafficVisualization\TrafficVisualization\obj\Debug\TrafficVisualization.pdb
 E:\TruckDemo\TruckDemoSite\TrafficVisualization\bin\TrafficVisualization.dll.config
@@ -376,3 +375,4 @@ E:\TruckDemo\TruckDemoSite\TrafficVisualization\bin\System.Web.Optimization.xml
 E:\TruckDemo\TruckDemoSite\TrafficVisualization\obj\Debug\TrafficVisualization.csprojResolveAssemblyReference.cache
 E:\TruckDemo\TruckDemoSite\TrafficVisualization\obj\Debug\TrafficVisualization.dll
 E:\TruckDemo\TruckDemoSite\TrafficVisualization\obj\Debug\TrafficVisualization.pdb
+D:\ThirdEye\Connected Cars\TrafficVisualization\TrafficVisualization\TrafficVisualization\obj\Debug\TrafficVisualization.csprojResolveAssemblyReference.cache
