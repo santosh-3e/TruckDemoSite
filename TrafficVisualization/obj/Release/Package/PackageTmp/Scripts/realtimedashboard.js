@@ -126,12 +126,17 @@ var StartRealTimeDashboard = false;
 
 var counter = 0;
 $(document).ready(function () {
+    $("#mystartbtn").hide();
+    $("#adversebutton").hide();
 
     // Instance the tour
     $("#StartDiv").show();
     $("#cmdSTartDemo").on("click", function () {
         $("#DemoDiv").show();
         $("#StartDiv").hide();
+        $("#mystartbtn").show();
+        $("#adversebutton").show();
+       
 
         $('#resetDashboard').bootstrapSwitch("state", true, true);
         //Start the tour
@@ -158,7 +163,7 @@ $(document).ready(function () {
         {
             element: ".mylocationdiv",
             title: "Current Location Information",
-            content: "Real time computation of latitude & longitude information into its geographical location."
+            content: "Latitude & longitude information emitted by each of the trucks is computed into its geographical location in real time."
         },
         {
             element: "#chart3",
@@ -170,7 +175,7 @@ $(document).ready(function () {
             {
                 element: "#divSafe",
                 title: "Predictions Based On Sensor Readings",
-                content: "Machine Learning scoring of data in real time to determine if the food would be safe for next 4 hours",
+                content: "Machine learning algorithms score sensor data to determine food safety in real time.",
                 placement: "bottom",
                 onNext: function () {
                     $('#btnChangeData').bootstrapSwitch("state", true, true);
@@ -180,7 +185,7 @@ $(document).ready(function () {
         {
             element: "#adversebutton",
             title: "Control Positive or Adverse condition",
-            content: "Control Positive or Adverse condition by clicking here.",
+            content: "Send data for good or adverse or conditions by clicking here.",
             placement: "bottom"
         },
 
@@ -209,7 +214,6 @@ $(document).ready(function () {
    // try {
     $("[btn='toggleBtn']").bootstrapSwitch();
     $('#resetDashboard').on('switchChange.bootstrapSwitch', function (event, state) {
-        console.log($(this).attr("eventfor"));
         // Start Stop Button Event
         if ($(this).attr("eventfor") === "2") {
             //control data feeding
@@ -237,7 +241,7 @@ $(document).ready(function () {
             $.ajax({
                 url: "/api/Realtimedashboard/StartDataFeeder?process=" + JSON.stringify(datafeeder)
             }).done(function () {
-                showMessage("Data feeder process " + (datafeeder.StartProcess ? "Started" : "Stopped"));
+                //showMessage("Data feeder process " + (datafeeder.StartProcess ? "Started" : "Stopped"));
             });
 
             if (state) {
@@ -336,7 +340,6 @@ function CallHBaseApi() {
         dataType: "json"
     }).success(function (data) {
         var data1 = jQuery.parseJSON(data);
-        console.log(data);
         counter++;
         IsFetchingTruckData = false;
         $.each(data1, function (index, d) {
@@ -584,7 +587,7 @@ function displayDownCharts(d) {
         if (d.ScoreLabel == 1) {
             paneltype = 'panel-danger';
             background = "bg-danger";
-            message = "<strong>" + currentTruck.ProductName + " would go <div style='display:inline-block;background-color:#DD0000;color:white'>BAD </div>in next 4 hours</strong>.<br>-Prediction is based on the current sensor readings.";
+            message = "<strong>" + currentTruck.ProductName + " would go <div style='display:inline-block;background-color:#DD0000;color:white'> BAD </div> in next 4 hours</strong>.<br>-Prediction is based on the current sensor readings.";
         }
 
         $("#score_prediction")

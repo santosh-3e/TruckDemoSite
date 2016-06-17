@@ -44,25 +44,24 @@
     height: 80px;
     border: none;
 }
- 
+
 .tab {
     height: 480px;
 }
 
 .location_div {
     margin-bottom: 20px;
-    # margin-left: 15px;
     background-color: #00B050;
 }
 
     .location_div h4 {
         color: black !important;
     }
-     
+
 .truckinfo_div {
     margin-bottom: 20px;
     margin-left: 15px;
-    background-color: #92D050; 
+    background-color: #92D050;
     color: black !important;
 }
 
@@ -78,47 +77,77 @@
     height: 70px;
     width: 70px;
     vertical-align: middle;
+    border: 1px red solid;
 }
 
-#truckmenu.nav li.active a{
+#truckmenu.nav li.active a {
+    background-color: #1C3052 !important;
+    color: white;
+}
+
+#truckmenu.nav li a {
+    background-color: #428BCA !important;
+    color: white;
+    border: 1px white solid;
+}
+
+/*#truckmenu.nav li.active a:hover{
     background-color:#1C3052   !important;
     color:white;
-}
-#truckmenu.nav li a{
-    background-color:#90B0D4 !important; 
-    color:white;
-}
+}*/
 
-#truckmenu.nav li.active a:hover{
-    background-color:#1C3052   !important;
-    color:white;
-}
-
-.popover-content{
-background-color:#b1ee70;
-color:black;
-
+.popover-content {
+    background-color: #b1ee70;
+    color: black;
 }
 
 .popover.right .arrow:after {
-  border-right-color: #b1ee70;
+    border-right-color: #b1ee70;
 }
 
 .popover.bottom .arrow:after {
-  border-bottom-color: #b1ee70;
+    border-bottom-color: #b1ee70;
 }
 
 .popover.top .arrow:after {
-  border-top-color: #b1ee70;
+    border-top-color: #b1ee70;
 }
 
 .popover.left .arrow:after {
-  border-left-color: #b1ee70;
+    border-left-color: #b1ee70;
 }
 
-.popover-title{
-background-color:#b1ee70;
-color:black;
-font-weight: bold;
-font-size:medium;
+.popover-title {
+    background-color: #b1ee70;
+    color: black;
+    font-weight: bold;
+    font-size: medium;
 }
+
+.navbar-nav > li > a, .navbar-brand {
+    padding-top: 4px !important;
+    padding-bottom: 0 !important;
+    height: 30px;
+    background-image:none;
+    text-align:center;
+    vertical-align:middle;
+    border:none;
+}
+.navbar-default{
+    border:none !important;
+    background-image:none;
+}
+.navbar {
+    min-height: 30px !important;
+}
+
+.navbar-nav > li.active > a{
+    color:white !important;
+    background-image:none !important;
+}
+
+.navbar-nav > li.active > a:hover{
+    color:white !important;
+    background-image:none !important;
+}
+

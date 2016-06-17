@@ -126,12 +126,17 @@ var StartRealTimeDashboard = false;
 
 var counter = 0;
 $(document).ready(function () {
+    $("#mystartbtn").hide();
+    $("#adversebutton").hide();
 
     // Instance the tour
     $("#StartDiv").show();
     $("#cmdSTartDemo").on("click", function () {
         $("#DemoDiv").show();
         $("#StartDiv").hide();
+        $("#mystartbtn").show();
+        $("#adversebutton").show();
+       
 
         $('#resetDashboard').bootstrapSwitch("state", true, true);
         //Start the tour
@@ -209,7 +214,6 @@ $(document).ready(function () {
    // try {
     $("[btn='toggleBtn']").bootstrapSwitch();
     $('#resetDashboard').on('switchChange.bootstrapSwitch', function (event, state) {
-        console.log($(this).attr("eventfor"));
         // Start Stop Button Event
         if ($(this).attr("eventfor") === "2") {
             //control data feeding
@@ -336,7 +340,6 @@ function CallHBaseApi() {
         dataType: "json"
     }).success(function (data) {
         var data1 = jQuery.parseJSON(data);
-        console.log(data);
         counter++;
         IsFetchingTruckData = false;
         $.each(data1, function (index, d) {
