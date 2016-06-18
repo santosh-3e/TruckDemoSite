@@ -195,13 +195,7 @@ $(document).ready(function () {
                 content: "Machine Learning scoring of data in real time to determine if the food would go bad in next 4 hours",
                 placement: "bottom"
             },
-
-        //{
-        //    element: "#divSafe",
-        //    title: "",
-        //    content: "Machine Learning has scored the data in real time and determined that the [food type]will go bad in next 4 hours.<br>The Trucking company can now take corrective actions to stop the [food type] from going bad.",
-        //    placement: "bottom"
-        //}
+       
         ],
         animation: true,
         container: "body",
