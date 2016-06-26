@@ -152,7 +152,8 @@ $(document).ready(function () {
             element: "#mystartbtn",
             title: "Start/Stop Demo",
             content: "Start/Stop the demo by clicking here.",
-            placement: "bottom"
+            placement: "bottom",
+            hide: "#step-0"
         },
         {
             element: "#truck1_link",
@@ -186,7 +187,12 @@ $(document).ready(function () {
             element: "#adversebutton",
             title: "Control Positive or Adverse condition",
             content: "Send data for good or adverse or conditions by clicking here.",
-            placement: "bottom"
+            placement: "bottom",
+            onNext: function () {
+                tour.end();
+                tour1.init();
+                tour1.start();
+            }
         },
 
             {
@@ -200,7 +206,25 @@ $(document).ready(function () {
         animation: true,
         container: "body",
         backdrop: false,
-        storage: false
+        storage: false,
+        template: "<div class='popover tour'> <div class='arrow'></div><h3 class='popover-title'></h3><div class='popover-content'></div><div class='popover-navigation'><button class='btn btn-default' data-role='next'>Next »</button></div></div>"
+    });
+
+    var tour1 = new Tour({
+        steps: [
+            {
+                element: "#divSafe",
+                title: "Predictions Based On Sensor Readings",
+                content: "Machine Learning scoring of data in real time to determine if the food would go bad in next 4 hours",
+                placement: "bottom"
+            },
+
+        ],
+        animation: true,
+        container: "body",
+        backdrop: false,
+        storage: false,
+        template: "<div class='popover tour'> <div class='arrow'></div><h3 class='popover-title'></h3><div class='popover-content'></div><div class='popover-navigation'> <button class='btn btn-default' data-role='end'>End tour</button></div></div>"
     });
     // Initialize the tour
     tour.init();
@@ -602,6 +626,8 @@ function displayDownCharts(d) {
 
         nv.addGraph(graph(d));
     }
+
+
 }
 
 function graph(d) {
