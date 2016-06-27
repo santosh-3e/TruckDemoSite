@@ -27,10 +27,6 @@
                     <a href="http://thirdeyecss.com/about-us/" style="color: black">
                         <img src="Images/TElogo.png" style="height:50px;font-size:15px; padding-right:5px"/>Talk to Third Eye</a>
                 </li>
-
-                  <%--<li role="presentation">
-                    <a href="http://thirdeyecss.com/about-us/" style="color: black; padding-top:24px ; padding-right:10px; padding-bottom:25px;font-size:15px">Technology</a>
-                </li>--%>
             </ul>
         </div>
     </div>
@@ -54,7 +50,7 @@
                 </li>
             </ul>
 
-            <ul class="nav navbar-nav navbar-right role="tablist" style="margin-right:15px">
+            <ul class="nav navbar-nav navbar-right" role="tablist" style="margin-right:15px">
                 <li>
                     <div id="mystartbtn" style="display: inline-block ; margin-right:10px">
 

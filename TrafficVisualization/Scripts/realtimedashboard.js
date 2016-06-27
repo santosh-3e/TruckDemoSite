@@ -121,9 +121,7 @@ var datafeeder = {
     StartProcess: false,
     IsPositiveFeeds: false
 };
-
 var StartRealTimeDashboard = false;
-
 var counter = 0;
 $(document).ready(function () {
     $("#mystartbtn").hide();
@@ -146,14 +144,42 @@ $(document).ready(function () {
       
         return false;
     });
+
+    var tour1 = new Tour({
+        steps: [
+            {
+                element: "#divSafe",
+                title: "Predictions Based On Sensor Readings",
+                content: "Machine Learning scoring of data in real time to determine if the food would go bad in next 4 hours",
+                placement: "bottom",
+                onNext: function () {
+                    setTimeout(function() {
+                        tour1.end();
+                    },500);
+                }
+            },
+             {
+                 element: "#divSafe",
+                 title: "Predictions Based On Sensor Readings",
+                 content: "Machine Learning scoring of data in real time to determine if the food would go bad in next 4 hours",
+                 placement: "bottom"
+             }
+        ],
+        animation: true,
+        container: "body",
+        backdrop: false,
+        storage: false,
+        template: "<div class='popover tour'><div class='arrow'></div><h3 class='popover-title'></h3><div class='popover-content'></div><div class='popover-navigation'><button class='btn btn-info btn-xs' data-role='next'>End Tour</button></div></div>"
+    });
+
+
     var tour = new Tour({
         steps: [
         {
             element: "#mystartbtn",
             title: "Start/Stop Demo",
             content: "Start/Stop the demo by clicking here.",
-            placement: "bottom",
-            hide: "#step-0"
+            placement: "bottom"
         },
         {
             element: "#truck1_link",
@@ -173,16 +199,15 @@ $(document).ready(function () {
             content: "Data from 6 types of sensors installed in each truck being displayed in real time<br />1.Carbon-di-oxide<br />2.Oxygen<br />3.Moisture<br />4.Ethylene<br />5.Pressure<br />6.Temperature",
             placement: "top"
         },
-            {
+        {
                 element: "#divSafe",
                 title: "Predictions Based On Sensor Readings",
                 content: "Machine learning algorithms score sensor data to determine food safety in real time.",
                 placement: "bottom",
-                onNext: function () {
-                    $('#btnChangeData').bootstrapSwitch("state", true, true);
-                }
-            },
-
+                onNext: function() {
+                $('#btnChangeData').bootstrapSwitch("state", true, true);
+            }
+        },
         {
             element: "#adversebutton",
             title: "Control Positive or Adverse condition",
@@ -194,55 +219,23 @@ $(document).ready(function () {
                 tour1.start();
             }
         },
-
-            {
-                element: "#divSafe",
-                title: "Predictions Based On Sensor Readings",
-                content: "Machine Learning scoring of data in real time to determine if the food would go bad in next 4 hours",
-                placement: "bottom"
-            },
-       
+        {
+            element: "#divSafe222",
+            title: "Predictions Based On Sensor Readings",
+            content: "Machine Learning scoring of data in real time to determine if the food would go bad in next 4 hours",
+            placement: "bottom"
+        }
         ],
         animation: true,
         container: "body",
         backdrop: false,
         storage: false,
-        template: "<div class='popover tour'> <div class='arrow'></div><h3 class='popover-title'></h3><div class='popover-content'></div><div class='popover-navigation'><button class='btn btn-default' data-role='next'>Next »</button></div></div>"
-    });
-
-    var tour1 = new Tour({
-        steps: [
-            {
-                element: "#divSafe",
-                title: "Predictions Based On Sensor Readings",
-                content: "Machine Learning scoring of data in real time to determine if the food would go bad in next 4 hours",
-                placement: "bottom",
-                onNext: function () {
-                    tour1.end();
-                }
-            },
-
-             {
-                 element: "#divSafe",
-                 title: "Predictions Based On Sensor Readings",
-                 content: "Machine Learning scoring of data in real time to determine if the food would go bad in next 4 hours",
-                 placement: "bottom",
-                 template: "<div class='popover tour'> <div class='arrow'></div><h3 class='popover-title'></h3><div class='popover-content'></div><div class='popover-navigation'><button class='btn btn-default' data-role='next'>Next »</button></div></div>"
-             },
-
-        ],
-        animation: true,
-        container: "body",
-        backdrop: false,
-        storage: false,
-        template: "<div class='popover tour'> <div class='arrow'></div><h3 class='popover-title'></h3><div class='popover-content'></div><div class='popover-navigation'> <button class='btn btn-default' data-role='end'>End tour</button></div></div>"
+        template: "<div class='popover tour'> <div class='arrow'></div><h3 class='popover-title'></h3><div class='popover-content'></div><div class='popover-navigation'><button class='btn btn-info btn-xs' data-role='next'>Next »</button></div></div>"
     });
     // Initialize the tour
     tour.init();
 
-    
-
-
+ 
    // try {
     $("[btn='toggleBtn']").bootstrapSwitch();
     $('#resetDashboard').on('switchChange.bootstrapSwitch', function (event, state) {
@@ -334,8 +327,6 @@ $(document).ready(function () {
         }
     }, interval);
 });
-
-
 
 function showMessage(message) {
 
