@@ -20,8 +20,6 @@
       <p style="font-size:30px; margin-top:20px; text-align:center; font-weight:300">Fleet Analytics Demo</p>
 
        </div>
-      
-         
 
         <div class="col-md-4" style="margin-top: 15px">
              <ul class="nav nav-pills pull-right" id="aboutus">
@@ -104,7 +102,6 @@
 
                 </div>
             </div>--%>
-
         </div>
 
        

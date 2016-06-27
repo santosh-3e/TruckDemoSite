@@ -216,8 +216,19 @@ $(document).ready(function () {
                 element: "#divSafe",
                 title: "Predictions Based On Sensor Readings",
                 content: "Machine Learning scoring of data in real time to determine if the food would go bad in next 4 hours",
-                placement: "bottom"
+                placement: "bottom",
+                onNext: function () {
+                    tour1.end();
+                }
             },
+
+             {
+                 element: "#divSafe",
+                 title: "Predictions Based On Sensor Readings",
+                 content: "Machine Learning scoring of data in real time to determine if the food would go bad in next 4 hours",
+                 placement: "bottom",
+                 template: "<div class='popover tour'> <div class='arrow'></div><h3 class='popover-title'></h3><div class='popover-content'></div><div class='popover-navigation'><button class='btn btn-default' data-role='next'>Next »</button></div></div>"
+             },
 
         ],
         animation: true,
@@ -228,6 +239,9 @@ $(document).ready(function () {
     });
     // Initialize the tour
     tour.init();
+
+    
+
 
    // try {
     $("[btn='toggleBtn']").bootstrapSwitch();
