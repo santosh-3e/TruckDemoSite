@@ -230,7 +230,7 @@ $(document).ready(function () {
         container: "body",
         backdrop: false,
         storage: false,
-        template: "<div class='popover tour'> <div class='arrow'></div><h3 class='popover-title'></h3><div class='popover-content'></div><div class='popover-navigation'><button class='btn btn-info btn-xs' data-role='next'>Next »</button></div></div>"
+        template: "<div class='popover tour'> <div class='arrow'></div><h3 class='popover-title'></h3><div class='popover-content'></div><div class='popover-navigation'><button class='btn btn-info btn-xs' style='margin-bottom:5px' data-role='next'>Next »</button></div></div>"
     });
     // Initialize the tour
     tour.init();
@@ -627,13 +627,17 @@ function displayDownCharts(d) {
                 + '<div class="row"><div class="' + headingwidth + '"><b>Temperature</b></div><div class="' + datagwidth + '">: ' + d.Temperature + '</div></div>'
                 + '<hr/><div class="row"><div class="col-md-12"><div id="divSafe"><span class="list-group-item"" style="background-color:#90B0D4; text-align:center" >' + message + '</span></div></div></div>'
                 + '</div></div></div>'
+                + '<div class="panel ' + paneltype + '">'
+                + '<div class="panel-body ' + background + '">'
+                + '<div class="row"><div class="col-md-12"><div id="maintanance">Predictive Maintenance results in huge cost savings for the Trucking industry.</br><a href="http://thirdeyecss.com/eyera">Learn More</a></div></div></div>'
             );
 
         nv.addGraph(graph(d));
     }
 
-
 }
+
+
 
 function graph(d) {
 
@@ -850,8 +854,8 @@ function detailsInfo(d) {
             + '<div class="row"><div class="' + headingwidth + '"><b>Pressure</b></div><div class="' + datagwidth + '">: ' + d.Pressure + '</div></div>'
             + '<div class="row"><div class="' + headingwidth + '"><b>Temperature</b></div><div class="' + datagwidth + '">: ' + d.Temperature + '</div></div>'
             + '</div></div>';
+           
     return html;
-    
 }
 
 function togglemap(e, truckId) {
@@ -893,3 +897,4 @@ function createDirections() {
         addWaypoint();
     }
 }
+

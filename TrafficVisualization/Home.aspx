@@ -111,7 +111,7 @@
         <div class="col-md-6" style="margin-bottom:10px;">
             <div class="row">
                 <div class='tab col-md-12'>
-                    <div id='truck_map' style="position:absolute; width:95%; height:459px;"                        >
+                    <div id='truck_map' style="position:absolute; width:95%; height:488px;"                        >
                     </div>
                 </div>
             </div>
@@ -120,12 +120,12 @@
         <div class="col-md-3" style="margin-bottom:10px;">
             <div class="row">
                 <div class="col-md-12">
-                    <div id="score_prediction" style="height:478px;">
+                    <div id="score_prediction" style="height:450px; margin-bottom:50px">
                     </div>
                 </div>
             </div>
         </div>
-
+       
          <%--<div class="col-md-3" style="margin-bottom:10px;">
             <div class="row">
                 <div class="col-md-12">

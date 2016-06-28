@@ -427,3 +427,7 @@ D:\Santosh\ThirdEyeCss\DJ\TruckDemoSite\TrafficVisualization\bin\System.Web.Opti
 D:\Santosh\ThirdEyeCss\DJ\TruckDemoSite\TrafficVisualization\obj\Debug\TrafficVisualization.csprojResolveAssemblyReference.cache
 D:\Santosh\ThirdEyeCss\DJ\TruckDemoSite\TrafficVisualization\obj\Debug\TrafficVisualization.dll
 D:\Santosh\ThirdEyeCss\DJ\TruckDemoSite\TrafficVisualization\obj\Debug\TrafficVisualization.pdb
+D:\ThirdEye\Connected Cars\TrafficVisualization\TrafficVisualization\TrafficVisualization\bin\Microsoft.WindowsAzure.Storage.dll
+D:\ThirdEye\Connected Cars\TrafficVisualization\TrafficVisualization\TrafficVisualization\bin\Microsoft.Data.Edm.dll
+D:\ThirdEye\Connected Cars\TrafficVisualization\TrafficVisualization\TrafficVisualization\bin\Microsoft.Data.Services.Client.dll
+D:\ThirdEye\Connected Cars\TrafficVisualization\TrafficVisualization\TrafficVisualization\bin\Microsoft.Data.OData.dll
