@@ -216,9 +216,7 @@
     <Content Include="assets\nvd3\Makefile" />
     <Content Include="assets\nvd3\package.json" />
     <Content Include="assets\nvd3\README.md" />
-    <None Include="Properties\PublishProfiles\iot-truck-demo - FTP.pubxml" />
     <None Include="Properties\PublishProfiles\iot-truck-demo - Web Deploy.pubxml" />
-    <None Include="Properties\PublishProfiles\iot-truck-demo.pubxml" />
     <None Include="Scripts\jquery-2.1.1.intellisense.js" />
     <Content Include="fonts\weathericons-regular-webfont.svg" />
     <Content Include="Global.asax" />

@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <parameters>
   <parameter name="TruckDemoConnString-Web.config Connection String" description="TruckDemoConnString Connection String used in web.config by the application to access the database." defaultValue="Server=tcp:q44uok20o1.database.windows.net,1433;Database=TruckDB;User ID=thirdeyecss@q44uok20o1;Password=BigData257!;Trusted_Connection=False;Encrypt=True;Connection Timeout=30;" tags="SqlConnectionString">
-    <parameterEntry kind="XmlFile" scope="D:\\ThirdEye\\Connected\ Cars\\TrafficVisualization\\TrafficVisualization\\TrafficVisualization\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='TruckDemoConnString']/@connectionString" />
+    <parameterEntry kind="XmlFile" scope="D:\\Santosh\\ThirdEyeCss\\DJ\\TruckDemoSite\\TrafficVisualization\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='TruckDemoConnString']/@connectionString" />
   </parameter>
 </parameters>

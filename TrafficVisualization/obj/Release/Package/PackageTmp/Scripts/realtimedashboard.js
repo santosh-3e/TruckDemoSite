@@ -121,9 +121,7 @@ var datafeeder = {
     StartProcess: false,
     IsPositiveFeeds: false
 };
-
 var StartRealTimeDashboard = false;
-
 var counter = 0;
 $(document).ready(function () {
     $("#mystartbtn").hide();
@@ -146,6 +144,35 @@ $(document).ready(function () {
       
         return false;
     });
+
+    var tour1 = new Tour({
+        steps: [
+            {
+                element: "#divSafe",
+                title: "Predictions Based On Sensor Readings",
+                content: "Machine Learning scoring of data in real time to determine if the food would go bad in next 4 hours",
+                placement: "bottom",
+                onNext: function () {
+                    setTimeout(function() {
+                        tour1.end();
+                    },500);
+                }
+            },
+             {
+                 element: "#divSafe",
+                 title: "Predictions Based On Sensor Readings",
+                 content: "Machine Learning scoring of data in real time to determine if the food would go bad in next 4 hours",
+                 placement: "bottom"
+             }
+        ],
+        animation: true,
+        container: "body",
+        backdrop: false,
+        storage: false,
+        template: "<div class='popover tour'><div class='arrow'></div><h3 class='popover-title'></h3><div class='popover-content'></div><div class='popover-navigation'><button class='btn btn-info btn-xs' data-role='next'>End Tour</button></div></div>"
+    });
+
+
     var tour = new Tour({
         steps: [
         {
@@ -172,45 +199,43 @@ $(document).ready(function () {
             content: "Data from 6 types of sensors installed in each truck being displayed in real time<br />1.Carbon-di-oxide<br />2.Oxygen<br />3.Moisture<br />4.Ethylene<br />5.Pressure<br />6.Temperature",
             placement: "top"
         },
-            {
+        {
                 element: "#divSafe",
                 title: "Predictions Based On Sensor Readings",
                 content: "Machine learning algorithms score sensor data to determine food safety in real time.",
                 placement: "bottom",
-                onNext: function () {
-                    $('#btnChangeData').bootstrapSwitch("state", true, true);
-                }
-            },
-
+                onNext: function() {
+                $('#btnChangeData').bootstrapSwitch("state", true, true);
+            }
+        },
         {
             element: "#adversebutton",
             title: "Control Positive or Adverse condition",
             content: "Send data for good or adverse or conditions by clicking here.",
-            placement: "bottom"
+            placement: "bottom",
+            onNext: function () {
+                tour.end();
+                tour1.init();
+                tour1.start();
+            }
         },
-
-            {
-                element: "#divSafe",
-                title: "Predictions Based On Sensor Readings",
-                content: "Machine Learning scoring of data in real time to determine if the food would go bad in next 4 hours",
-                placement: "bottom"
-            },
-
-        //{
-        //    element: "#divSafe",
-        //    title: "",
-        //    content: "Machine Learning has scored the data in real time and determined that the [food type]will go bad in next 4 hours.<br>The Trucking company can now take corrective actions to stop the [food type] from going bad.",
-        //    placement: "bottom"
-        //}
+        {
+            element: "#divSafe222",
+            title: "Predictions Based On Sensor Readings",
+            content: "Machine Learning scoring of data in real time to determine if the food would go bad in next 4 hours",
+            placement: "bottom"
+        }
         ],
         animation: true,
         container: "body",
         backdrop: false,
-        storage: false
+        storage: false,
+        template: "<div class='popover tour'> <div class='arrow'></div><h3 class='popover-title'></h3><div class='popover-content'></div><div class='popover-navigation'><button class='btn btn-info btn-xs' style='margin-bottom:5px' data-role='next'>Next »</button></div></div>"
     });
     // Initialize the tour
     tour.init();
 
+ 
    // try {
     $("[btn='toggleBtn']").bootstrapSwitch();
     $('#resetDashboard').on('switchChange.bootstrapSwitch', function (event, state) {
@@ -302,8 +327,6 @@ $(document).ready(function () {
         }
     }, interval);
 });
-
-
 
 function showMessage(message) {
 
@@ -604,11 +627,17 @@ function displayDownCharts(d) {
                 + '<div class="row"><div class="' + headingwidth + '"><b>Temperature</b></div><div class="' + datagwidth + '">: ' + d.Temperature + '</div></div>'
                 + '<hr/><div class="row"><div class="col-md-12"><div id="divSafe"><span class="list-group-item"" style="background-color:#90B0D4; text-align:center" >' + message + '</span></div></div></div>'
                 + '</div></div></div>'
+                + '<div class="panel ' + paneltype + '">'
+                + '<div class="panel-body ' + background + '">'
+                + '<div class="row"><div class="col-md-12"><div id="maintanance">Predictive Maintenance results in huge cost savings for the Trucking industry.</br><a href="http://thirdeyecss.com/eyera">Learn More</a></div></div></div>'
             );
 
         nv.addGraph(graph(d));
     }
+
 }
+
+
 
 function graph(d) {
 
@@ -825,8 +854,8 @@ function detailsInfo(d) {
             + '<div class="row"><div class="' + headingwidth + '"><b>Pressure</b></div><div class="' + datagwidth + '">: ' + d.Pressure + '</div></div>'
             + '<div class="row"><div class="' + headingwidth + '"><b>Temperature</b></div><div class="' + datagwidth + '">: ' + d.Temperature + '</div></div>'
             + '</div></div>';
+           
     return html;
-    
 }
 
 function togglemap(e, truckId) {
@@ -868,3 +897,4 @@ function createDirections() {
         addWaypoint();
     }
 }
+

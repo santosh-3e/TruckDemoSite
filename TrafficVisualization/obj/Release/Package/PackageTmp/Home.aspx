@@ -6,55 +6,26 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <input type="text" id="truck" value="1" class="hidden" />
     <div class="row">
-        <div class="col-md-8">
-            <h2 style="margin-top: 5px; height: 50px">
+        <div class="col-md-4">
+            <h2 style="margin-top: 5px; height: 50px"> 
                 <a href="http://thirdeyecss.com/eyera" style="color: black; text-decoration: none">
-                    <img src="Images/eyera-small.png" style="width: 200px; height: auto; margin-bottom: 13px" />
-                    -&nbsp;&nbsp;&nbsp;Fleet Analytics Demo
+                    <img src="Images/eyera-small.png" style="width: 211px; height: auto; margin-bottom: 13px" />
                 </a>
             </h2>
-            <p style="font-size:22px; padding-left:15px">Solutions for Internet of things</p>
+            <p style="font-size:12px; padding-left:15px">Solutions for the Internet of Things</p>
         </div>
+      
+        <div class="col-md-4">
+
+      <p style="font-size:30px; margin-top:20px; text-align:center; font-weight:300">Fleet Analytics Demo</p>
+
+       </div>
 
         <div class="col-md-4" style="margin-top: 15px">
-           <%-- <div class="btn-group btn-group-sm pull-right"  style="margin-top: 80px">
-                
-                <div id="mystartbtn" style="display:inline-block">
-
-                    <input type="checkbox" class="btn" id="resetDashboard"
-                        eventfor="2" btn="toggleBtn"
-                        data-on-text="Stop Demo"
-                        data-off-text="Start Demo"
-                        data-size="small"
-                        data-off-color="info"
-                        data-handle-width="70px"
-                        name="start-datafeed" />
-                </div>
-
-                <div id="adversebutton" style="display: inline-block">
-
-                    <input type="checkbox" class="btn" id="btnChangeData"
-                        eventfor="1"
-                        btn="toggleBtn"
-                        data-on-text="Send Data for Good Conditions"
-                        data-off-text="Send Data for Adverse Conditions"
-                        data-size="small"
-                        data-off-color="warning"
-                        data-on-color="success"
-                        data-handle-width="190px"
-                        name="start-datafeed" />
-                </div>
-
-            </div>--%>
-                      
              <ul class="nav nav-pills pull-right" id="aboutus">
                 <li role="presentation">
                     <a href="http://thirdeyecss.com/about-us/" style="color: black">
                         <img src="Images/TElogo.png" style="height:50px;font-size:15px; padding-right:5px"/>Talk to Third Eye</a>
-                </li>
-
-                  <li role="presentation">
-                    <a href="http://thirdeyecss.com/about-us/" style="color: black; padding-top:24px ; padding-right:10px; padding-bottom:25px;font-size:15px">Technology</a>
                 </li>
             </ul>
         </div>
@@ -79,9 +50,9 @@
                 </li>
             </ul>
 
-            <ul class="nav navbar-nav navbar-right role="tablist">
+            <ul class="nav navbar-nav navbar-right" role="tablist" style="margin-right:15px">
                 <li>
-                    <div id="mystartbtn" style="display: inline-block">
+                    <div id="mystartbtn" style="display: inline-block ; margin-right:10px">
 
                         <input type="checkbox" class="btn" id="resetDashboard"
                             eventfor="2" btn="toggleBtn"
@@ -127,7 +98,6 @@
 
                 </div>
             </div>--%>
-
         </div>
 
        
@@ -137,22 +107,33 @@
                 <div id='truck_det' class='detail col-md-12'></div>
             </div>
         </div>
+
         <div class="col-md-6" style="margin-bottom:10px;">
             <div class="row">
                 <div class='tab col-md-12'>
-                    <div id='truck_map' style="position:absolute; width:95%; height:478px;"                        >
+                    <div id='truck_map' style="position:absolute; width:95%; height:488px;"                        >
                     </div>
                 </div>
             </div>
         </div>
+
         <div class="col-md-3" style="margin-bottom:10px;">
             <div class="row">
                 <div class="col-md-12">
-                    <div id="score_prediction" style="height:478px;">
+                    <div id="score_prediction" style="height:450px; margin-bottom:50px">
                     </div>
                 </div>
             </div>
         </div>
+       
+         <%--<div class="col-md-3" style="margin-bottom:10px;">
+            <div class="row">
+                <div class="col-md-12">
+                    <div id="Predective_Maintenance" style="height:478px;">
+                    </div>
+                </div>
+            </div>
+        </div>--%>
     </div>
   
     <div class="row">
@@ -200,6 +181,10 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav pull-right">
         <li><a href="http://thirdeyecss.com/">© 2016. All Rights Reserved. Third Eye Consulting Services & Solutions LLC.</a></li>
+      </ul>
+        <ul class="nav navbar-nav pull-left">
+       <li><a href="http://thirdeyecss.com/tos-eyera-fleetanalytics">Terms of Services</a></li>
+          <li><a href="http://thirdeyecss.com/contact-us/">Contact Third Eye</a></li>
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->

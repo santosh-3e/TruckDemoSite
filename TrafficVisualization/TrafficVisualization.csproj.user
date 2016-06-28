@@ -8,7 +8,7 @@
     <WebStackScaffolding_LayoutPageFile />
     <WebStackScaffolding_DbContextTypeFullName>TrafficVisualization.DbContexts.TrafficVisualizationContext</WebStackScaffolding_DbContextTypeFullName>
     <WebStackScaffolding_IsAsyncSelected>False</WebStackScaffolding_IsAsyncSelected>
-    <NameOfLastUsedPublishProfile>iot-truck-demo</NameOfLastUsedPublishProfile>
+    <NameOfLastUsedPublishProfile>iot-truck-demo - Web Deploy</NameOfLastUsedPublishProfile>
     <WebStackScaffolding_ControllerDialogWidth>600</WebStackScaffolding_ControllerDialogWidth>
     <UseIISExpress>true</UseIISExpress>
   </PropertyGroup>
