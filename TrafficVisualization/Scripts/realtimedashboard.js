@@ -835,7 +835,6 @@ function graph(d) {
 function detailsInfo(d) {
     var headingwidth = 'col-md-5';
     var datagwidth = 'col-md-7';
-
     var html =
         '<div class="panel panel-primary"><div class="panel-heading">Truck Info</div>'
             + '<div class="panel-body"><div class="row"><div class="' + headingwidth + '"><b>Truck Id.</b></div><div class="' + datagwidth + '">: ' + currentTruck.Trucknumber + '</div></div>'
