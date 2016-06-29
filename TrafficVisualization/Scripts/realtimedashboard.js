@@ -179,30 +179,30 @@ $(document).ready(function () {
             element: "#mystartbtn",
             title: "Start/Stop Demo",
             content: "Start/Stop the demo by clicking here.",
-            placement: "bottom"
+            placement: "bottom",
         },
         {
             element: "#truck1_link",
             title: "Truck Information",
-            content: "Each Truck is carrying different types of food.",
+            content: "Each truck is carrying a different type of perishable food.",
             placement: "bottom"
         },
         {
             element: ".mylocationdiv",
             title: "Current Location Information",
-            content: "Latitude & longitude information emitted by each of the trucks is computed into its geographical location in real time."
+            content: "Latitude & longitude information extracted from each truck’s data is used to compute its geographical location in real time."
         },
         {
             element: "#chart3",
             title: "Truck Sensor Details",
             html: "true",
-            content: "Data from 6 types of sensors installed in each truck being displayed in real time<br />1.Carbon-di-oxide<br />2.Oxygen<br />3.Moisture<br />4.Ethylene<br />5.Pressure<br />6.Temperature",
+            content: "Six different types of sensors installed in the trucks that display their data in real time.",
             placement: "top"
         },
         {
                 element: "#divSafe",
                 title: "Predictions Based On Sensor Readings",
-                content: "Machine learning algorithms score sensor data to determine food safety in real time.",
+                content: "Machine learning algorithms score the six types of sensor data in real time to determine perishability of each kind of food.",
                 placement: "bottom",
                 onNext: function() {
                 $('#btnChangeData').bootstrapSwitch("state", true, true);
@@ -222,7 +222,7 @@ $(document).ready(function () {
         {
             element: "#divSafe222",
             title: "Predictions Based On Sensor Readings",
-            content: "Machine Learning scoring of data in real time to determine if the food would go bad in next 4 hours",
+            content: "Machine learning algorithms have determined in real time that the food in a particular truck will perish in next 4 hours. ",
             placement: "bottom"
         }
         ],
@@ -610,7 +610,7 @@ function displayDownCharts(d) {
         if (d.ScoreLabel == 1) {
             paneltype = 'panel-danger';
             background = "bg-danger";
-            message = "<strong>" + currentTruck.ProductName + " would go <div style='display:inline-block;background-color:#DD0000;color:white'> BAD </div> in next 4 hours</strong>.<br>-Prediction is based on the current sensor readings.";
+            message = "<strong>" + currentTruck.ProductName + " would <div style='display:inline-block;background-color:#DD0000;color:white'> PERISH  </div> in next 4 hours</strong>.<br>-Prediction is based on the current readings of six sensors data.";
         }
 
         $("#score_prediction")

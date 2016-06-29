@@ -43,7 +43,6 @@
     width: 80px;
     height: 80px;
     border: none;
-    
 }
 
 .tab {
@@ -84,6 +83,7 @@
 #truckmenu.nav li.active a {
     background-color: #1C3052 !important;
     color: white;
+    margin-left:15px;
 }
 
 #truckmenu.nav li a {
@@ -98,28 +98,29 @@
 }*/
 
 .popover-content {
-    background-color: #b1ee70;
+    background-color: #FFF162;
     color: black;
+    font-size:15px;
 }
 
 .popover.right .arrow:after {
-    border-right-color: #b1ee70;
+    border-right-color: #FFF162;
 }
 
 .popover.bottom .arrow:after {
-    border-bottom-color: #b1ee70;
+    border-bottom-color: #FFF162;
 }
 
 .popover.top .arrow:after {
-    border-top-color: #b1ee70;
+    border-top-color: #FFF162;
 }
 
 .popover.left .arrow:after {
-    border-left-color: #b1ee70;
+    border-left-color: #FFF162;
 }
 
 .popover-title {
-    background-color: #b1ee70;
+    background-color: #FFF162;
     color: black;
     font-weight: bold;
 }
@@ -127,7 +128,7 @@
     padding-bottom: 1px !important;
     padding-top: 1px !important;
     text-align: right;
-    background-color: #b1ee70;
+    background-color: #FFF162;
 }
 .navbar-nav > li > a, .navbar-brand {
     padding-top: 4px !important;
@@ -155,4 +156,20 @@
     color:white !important;
     background-image:none !important;
 }
+button.btn.btn-info.btn-xs{
+    background-color:#1C3052 !important;
+}
+
+.btn-info{
+    background-color:#1C3052 !important;
+    background-image:none !important;
+    border-color:transparent !important;
+}
+.panel-heading{
+    background-color:white;
+}
+.panel-success{
+     background-color:white;
+}
+
 

@@ -14,12 +14,10 @@
             </h2>
             <p style="font-size:12px; padding-left:15px">Solutions for the Internet of Things</p>
         </div>
-      
+
         <div class="col-md-4">
-
-      <p style="font-size:30px; margin-top:20px; text-align:center; font-weight:300">Fleet Analytics Demo</p>
-
-       </div>
+            <p style="font-size: 30px; margin-top: 20px; text-align: center; font-weight: 700">Fleet Analytics Demo</p>
+        </div>
 
         <div class="col-md-4" style="margin-top: 15px">
              <ul class="nav nav-pills pull-right" id="aboutus">
@@ -30,6 +28,8 @@
             </ul>
         </div>
     </div>
+
+    
 
     <div id="DemoDiv" style="display: none ;">
         <div class="row">
@@ -108,7 +108,7 @@
             </div>
         </div>
 
-        <div class="col-md-6" style="margin-bottom:10px;">
+        <div class="col-md-6" style="margin-bottom:10px">
             <div class="row">
                 <div class='tab col-md-12'>
                     <div id='truck_map' style="position:absolute; width:95%; height:488px;"                        >
@@ -170,7 +170,11 @@
     </div>
     </div>
    
-     <div id="StartDiv" style="text-align:center; padding-top:100px; display:none">
+
+     <div id="StartDiv" style="text-align:center; padding-top:20px; display:none">
+         <div class="col-md-12">
+             <p style="font-size: 15px; text-align: center; font-weight: 600">This demo showcases the power of real time predictive analytics on Internet of Things data.</br>The business use case highlights the benefits of Predictive Maintenance for the trucking industry.</p>
+         </div>
         <a href="" id="cmdSTartDemo"><img src="Images/start.PNG" /></a>
         <h1 style="font-weight:"bold">Start Fleet Analytics Demo</h1>
     </div>
@@ -179,9 +183,10 @@
   <div class="container-fluid">
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav pull-right">
+        <ul class="nav navbar-nav pull-right">
         <li><a href="http://thirdeyecss.com/">© 2016. All Rights Reserved. Third Eye Consulting Services & Solutions LLC.</a></li>
       </ul>
+
         <ul class="nav navbar-nav pull-left">
        <li><a href="http://thirdeyecss.com/tos-eyera-fleetanalytics">Terms of Services</a></li>
           <li><a href="http://thirdeyecss.com/contact-us/">Contact Third Eye</a></li>
