@@ -1,5 +1,5 @@
 ﻿body {
-    //padding-top: 70px;
+    /*//padding-top: 70px;*/
     padding-bottom: 70px;
     background-color: white;
     /*color: #FFFFFF;*/
@@ -8,7 +8,9 @@
 .panel {
     color: black;
 }
-
+/*.div.panel-heading{
+    background-color:aqua;
+}*/
 .chart {
     background-color: #5B9BD5;
 }
@@ -19,7 +21,7 @@
 
 .form-group {
     margin-bottom: 3px;
-    #background-color: #009dd6;
+    background-color: #009dd6;
 }
 
 .highlight {
@@ -44,25 +46,24 @@
     height: 80px;
     border: none;
 }
- 
+
 .tab {
     height: 480px;
 }
 
 .location_div {
     margin-bottom: 20px;
-    # margin-left: 15px;
     background-color: #00B050;
 }
 
     .location_div h4 {
         color: black !important;
     }
-     
+
 .truckinfo_div {
     margin-bottom: 20px;
     margin-left: 15px;
-    background-color: #92D050; 
+    background-color: #92D050;
     color: black !important;
 }
 
@@ -78,23 +79,184 @@
     height: 70px;
     width: 70px;
     vertical-align: middle;
+    border: 1px red solid;
 }
 
-#aboutus li a:hover{
-    color:black !important;
-    background-color:darkgrey !important;
+#truckmenu.nav li.active a {
+    background-color: #90B0D4 !important;
+    color: white;
+   
 }
 
-.nav li.active a{
+#truckmenu.nav li a {
+    background-color: #1C3052 !important;
+    color: white;
+    border: 1px white solid;
+}
+
+/*#truckmenu.nav li.active a:hover{
     background-color:#1C3052   !important;
     color:white;
-}
-.nav li a{
-    background-color:#90B0D4 !important; 
-    color:white;
+}*/
+
+.popover-content {
+    background-color: #FFF162;
+    color: black;
+    font-size:15px;
 }
 
-.nav li.active a:hover{
-    background-color:#1C3052   !important;
-    color:white;
+.popover.right .arrow:after {
+    border-right-color: #FFF162;
 }
+
+.popover.bottom .arrow:after {
+    border-bottom-color: #FFF162;
+}
+
+.popover.top .arrow:after {
+    border-top-color: #FFF162;
+}
+
+.popover.left .arrow:after {
+    border-left-color: #FFF162;
+}
+
+.popover-title {
+    background-color: #FFF162;
+    color: black;
+    font-weight: bold;
+}
+.popover-navigation {
+    padding-bottom: 1px !important;
+    padding-top: 1px !important;
+    text-align: right;
+    background-color: #FFF162;
+}
+.navbar-nav > li > a, .navbar-brand {
+    padding-top: 4px !important;
+    padding-bottom: 0 !important;
+    height: 30px;
+    background-image:none;
+    text-align:center;
+    vertical-align:middle;
+    border:none;
+}
+.navbar-default{
+    border:none !important;
+    background-image:none;
+}
+.navbar {
+    min-height: 30px !important;
+     margin-bottom:5px !important;
+     padding:0px;
+     margin: 0px 15px 0px 15px;
+
+}
+
+.navbar-right
+{
+    margin-right:0px !important;
+}
+
+.navbar-nav > li.active > a{
+    color:white !important;
+    background-image:none !important;
+}
+
+.navbar-nav > li.active > a:hover{
+    color:white !important;
+    background-image:none !important;
+   
+}
+button.btn.btn-info.btn-xs{
+    background-color:#1C3052 !important;
+}
+
+.btn-info{
+    background-color:#1C3052 !important;
+    background-image:none !important;
+    border-color:transparent !important;
+}
+
+.div.panel-success{
+     background-color:white;
+}
+
+.bootstrap-switch-primary{
+    background-color:#1C3052;
+}
+
+.bootstrap-switch .bootstrap-switch-handle-on.bootstrap-switch-primary{
+    background-color:#1C3052;
+}
+
+.bootstrap-switch .bootstrap-switch-handle-off.bootstrap-switch-info {
+    background-color:#1C3052;
+}
+
+.bootstrap-switch .bootstrap-switch-handle-off.bootstrap-switch-warning {
+ background-color:#1C3052;
+}
+
+.bootstrap-switch .bootstrap-switch-handle-on.bootstrap-switch-success, .bootstrap-switch .bootstrap-switch-handle-off.bootstrap-switch-success {
+    background-color:#1C3052;
+}
+
+element.style{color:aqua}
+
+.panel-eyera > .panel-heading {
+  background-image: -webkit-linear-gradient(top, #1B2F50 0%, #406CB4 100%);
+  background-image:      -o-linear-gradient(top, #1B2F50 0%, #406CB4 100%);
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#1B2F50), to(#406CB4));
+  background-image:         linear-gradient(to bottom, #1B2F50 0%, #406CB4 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff1B2F50', endColorstr='#ff406CB4', GradientType=0);
+  background-repeat: repeat-x;
+}
+
+.panel-eyera{border-color:#1B2F50}
+
+.panel-eyera>.panel-heading{color:#fff;background-color:#1B2F50;border-color:#1B2F50}
+
+
+.panel-eyera>.panel-heading+.panel-collapse>.panel-body{border-top-color:#1B2F50}
+
+
+.panel-eyera>.panel-heading .badge{color:#1B2F50;background-color:#fff}
+
+.panel-eyera>.panel-footer+.panel-collapse>.panel-body{border-bottom-color:#1B2F50}
+
+
+
+
+ .nv-multibar {
+     background-color:#1C3052;
+ }
+
+ nv-bar positive{
+     color:#1C3052;
+ }
+element.style {
+    fill: #1C3052;
+    stroke:#1C3052;
+}
+
+.panel{
+    margin-bottom:5px !important;
+}
+
+.panel-heading{
+    padding-bottom:3px;
+    padding-top:3px;
+}
+
+#divSafe> span{
+    padding-top:0;
+    padding-bottom:0;
+}
+
+hr{
+    margin-bottom:2px;
+    margin-top:2px;
+}
+
+

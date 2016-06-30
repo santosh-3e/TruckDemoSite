@@ -582,9 +582,6 @@
 
                 return chart;
             }
-
-
-
             app.init();
             $("#truck1_link").trigger("click");
 

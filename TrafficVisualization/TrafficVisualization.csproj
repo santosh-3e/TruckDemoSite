@@ -142,9 +142,17 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\bootstrap-tour.css" />
+    <Content Include="Content\bootstrap-tour.min.css" />
+    <Content Include="Content\custom.css" />
+    <Content Include="favicon.ico" />
     <Content Include="Images\eyera-logo-2.jpg" />
     <Content Include="Images\eyera-small-white.png" />
     <Content Include="Images\eyera-small.png" />
+    <Content Include="Images\favicon-16x16.png" />
+    <Content Include="Images\start.PNG" />
+    <Content Include="Images\startbutton.PNG" />
+    <Content Include="Images\TElogo.PNG" />
     <Content Include="Scripts\bootstrap-growl.min.js" />
     <Content Include="bingmap.aspx" />
     <Content Include="Content\bootstrap-switch.min.css" />
@@ -153,7 +161,6 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
-    <Content Include="Content\custom.css" />
     <Content Include="Content\weather-icons.css" />
     <Content Include="Content\weather-icons.min.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
@@ -734,6 +741,8 @@
     <Content Include="assets\nvd3\test\testScript.js" />
     <Content Include="assets\nvd3\test\teststyle.css" />
     <Content Include="Scripts\bootstrap-switch.min.js" />
+    <Content Include="Scripts\bootstrap-tour.js" />
+    <Content Include="Scripts\bootstrap-tour.min.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\Highcharts-4.0.1\js\adapters\standalone-framework.js" />
@@ -773,8 +782,6 @@
     <Content Include="Scripts\jquery-2.1.1.js" />
     <Content Include="Scripts\jquery-2.1.1.min.js" />
     <Content Include="Scripts\realtimedashboard.js" />
-    <Content Include="Scripts\settings.js" />
-    <Content Include="TrafficVisualization.aspx" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -816,13 +823,6 @@
     <Compile Include="Iotconfig.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RealTimeDashboardController.cs" />
-    <Compile Include="TrafficVisualization.aspx.cs">
-      <DependentUpon>TrafficVisualization.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="TrafficVisualization.aspx.designer.cs">
-      <DependentUpon>TrafficVisualization.aspx</DependentUpon>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
@@ -834,7 +834,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Helpers\" />
+    <Folder Include="obj\Helpers\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

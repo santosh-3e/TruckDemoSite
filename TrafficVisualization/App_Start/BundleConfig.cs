@@ -20,7 +20,9 @@ namespace TrafficVisualization.App_Start
 
             bundles.Add(new ScriptBundle("~/bundles/bootstrapjs").Include(
                      "~/Scripts/bootstrap.min.js",
-                     "~/Scripts/bootstrap-switch.min.js"));
+                     "~/Scripts/bootstrap-switch.min.js",
+                     "~/Scripts/bootstrap.tour.js",
+                     "~/Scripts/bootstrap-tour.min.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/modernizr").Include(
                     "~/Scripts/modernizr-latest.js"));
@@ -33,7 +35,9 @@ namespace TrafficVisualization.App_Start
 
             bundles.Add(new StyleBundle("~/bundles/bootstrap").Include(
                 "~/Content/bootstrap.min.css",
-                "~/Content/bootstrap-switch.min.css"));
+                "~/Content/bootstrap-switch.min.css",
+                "~/Content/bootstrap-tour.css",
+                "~/Content/bootstrap-tour.min.css"));
 
             bundles.Add(new StyleBundle("~/bundles/bootstraptheme").Include(
                 "~/Content/bootstrap-theme.css"));
