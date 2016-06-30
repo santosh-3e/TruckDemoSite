@@ -366,9 +366,10 @@ function CallHBaseApi() {
         counter++;
         IsFetchingTruckData = false;
         $.each(data1, function (index, d) {
-           
+            d.FLatitude = parseFloat(d.Latitude).toFixed(4);
+            d.FLongitude = parseFloat(d.Longitude).toFixed(4);
             try {
-                
+               
                 if (d.TruckID === "946891911") {
                    
                     if (truck1.StartLat === 0) {
@@ -558,6 +559,7 @@ function CallHBaseApi() {
                     }
                   
                     var line = new Microsoft.Maps.Polyline(currentTruck.geolLocations.sort(function(obj1, obj2) { return obj1.latitude - obj2.latitude; }));
+                    //var line = new Microsoft.Maps.Polyline(currentTruck.geolLocations);
                     map.entities.clear(); // = [];
 
                     map.setView({ center: locend, zoom: lastZoomLevel });
@@ -840,8 +842,8 @@ function detailsInfo(d) {
             + '<div class="panel-body"><div class="row"><div class="' + headingwidth + '"><b>Truck Id.</b></div><div class="' + datagwidth + '">: ' + currentTruck.Trucknumber + '</div></div>'
             + '<div class="row"><div class="' + headingwidth + '"><b>Driver Name</b></div><div class="' + datagwidth + '">: ' + currentTruck.Drivername + '</div></div></div></div>'
             + '<div class="panel panel-eyera"><div class="panel-heading">Current Location</div>'
-            + '<div class="panel-body mylocationdiv"><div class="row"><div class="' + headingwidth + '"><b>Latitude</b></div><div class="' + datagwidth + '">: ' + d.Latitude + '</div></div>'
-            + '<div class="row"><div class="' + headingwidth + '"><b>Longitude</b></div><div class="' + datagwidth + '">: ' + d.Longitude + '</div></div>'
+            + '<div class="panel-body mylocationdiv"><div class="row"><div class="' + headingwidth + '"><b>Latitude</b></div><div class="' + datagwidth + '">: ' + d.FLatitude + '</div></div>'
+            + '<div class="row"><div class="' + headingwidth + '"><b>Longitude</b></div><div class="' + datagwidth + '">: ' + d.FLongitude + '</div></div>'
             //+ '<div class="row"><div class="' + headingwidth + '"><b>Location</b></div><div class="' + datagwidth + '">: ' + d.Address + '</div></div>'
             + '</div></div>'
             + '<div class="panel panel-eyera"><div class="panel-heading">Average Sensor Reading</div>'
