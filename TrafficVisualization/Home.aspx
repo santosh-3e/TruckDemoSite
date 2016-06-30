@@ -12,11 +12,11 @@
                     <img src="Images/eyera-small.png" style="width: 211px; height: auto; margin-bottom: 13px" />
                 </a>
             </h2>
-            <p style="font-size:12px; padding-left:15px">Solutions for the Internet of Things</p>
+            <p style="font-size:12px; padding-left:15px; color:#1C3052">Solutions for the Internet of Things</p>
         </div>
 
         <div class="col-md-4">
-            <p style="font-size: 30px; margin-top: 20px; text-align: center; font-weight: 700">Fleet Analytics Demo</p>
+            <p style="font-size: 30px; color:#406CB4 ;margin-top: 20px; text-align: center; font-weight: 700">Fleet Analytics Demo</p>
         </div>
 
         <div class="col-md-4" style="margin-top: 15px">
@@ -50,7 +50,7 @@
                 </li>
             </ul>
 
-            <ul class="nav navbar-nav navbar-right" role="tablist" style="margin-right:15px">
+            <ul class="nav navbar-nav navbar-right" role="tablist">
                 <li>
                     <div id="mystartbtn" style="display: inline-block ; margin-right:10px">
 
@@ -77,6 +77,7 @@
                             data-handle-width="190px"
                             name="start-datafeed" />
                     </div>
+                    
                 </li>
             </ul>
   </nav>
@@ -110,8 +111,8 @@
 
         <div class="col-md-6" style="margin-bottom:10px">
             <div class="row">
-                <div class='tab col-md-12'>
-                    <div id='truck_map' style="position:absolute; width:95%; height:488px;"                        >
+                <div class='col-md-12'>
+                    <div id='truck_map' style="position:absolute; width:95%; height:400px;"                        >
                     </div>
                 </div>
             </div>
@@ -120,7 +121,7 @@
         <div class="col-md-3" style="margin-bottom:10px;">
             <div class="row">
                 <div class="col-md-12">
-                    <div id="score_prediction" style="height:450px; margin-bottom:50px">
+                    <div id="score_prediction"; margin-bottom:"50px">
                     </div>
                 </div>
             </div>
@@ -138,32 +139,32 @@
   
     <div class="row">
         <div class="col-md-2">
-            <div id="chart1" class="chart chart1">
+            <div id="chart1" class="chart chart1"  style="border:1px; background-color:white">
                 <svg></svg>
             </div>
         </div>
         <div class="col-md-2">
-            <div id='chart2' class="chart chart2">
+            <div id='chart2' class="chart chart2"  style="background-color:white">
                 <svg></svg>
             </div>
         </div>
         <div class="col-md-2">
-            <div id='chart3' class="chart chart3">
+            <div id='chart3' class="chart chart3"  style="background-color:white">
                 <svg></svg>
             </div>
         </div>
         <div class="col-md-2">
-            <div id='chart4' class="chart chart4">
+            <div id='chart4' class="chart chart4"  style="background-color:white">
                 <svg></svg>
             </div>
         </div>
         <div class="col-md-2">
-            <div id='chart5' class="chart chart5">
+            <div id='chart5' class="chart chart5"  style="background-color:white">
                 <svg></svg>
             </div>
         </div>
         <div class="col-md-2">
-            <div id='chart6' class="chart chart6">
+            <div id='chart6' class="chart chart6"  style="background-color:white">
                 <svg></svg>
             </div>
         </div>
@@ -171,9 +172,9 @@
     </div>
    
 
-     <div id="StartDiv" style="text-align:center; padding-top:20px; display:none">
+     <div id="StartDiv" style="text-align:center; padding-top:20px; display:none;color:#1C3052 ">
          <div class="col-md-12">
-             <p style="font-size: 15px; text-align: center; font-weight: 600">This demo showcases the power of real time predictive analytics on Internet of Things data.</br>The business use case highlights the benefits of Predictive Maintenance for the trucking industry.</p>
+             <p style="font-size: 17px; text-align: center; margin-top:70px ;font-weight: 600">This demo showcases the power of real time predictive analytics on Internet of Things data.</br>The business use case highlights the benefits of Predictive Maintenance for the trucking industry.</p>
          </div>
         <a href="" id="cmdSTartDemo"><img src="Images/start.PNG" /></a>
         <h1 style="font-weight:"bold">Start Fleet Analytics Demo</h1>

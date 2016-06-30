@@ -36,7 +36,7 @@ var truck1 = {
     Driverid: "001",
     Routename: "i-5",
     Routenumber: "i-5",
-    Graph_color: "#ff7f0e",
+    Graph_color: "#1C3052",
     StartLat: 0,
     StartLong: 0,
     EndLat: 0,
@@ -58,7 +58,7 @@ var truck2 = {
     Driverid: "002",
     Routename: "i-78",
     Routenumber: "i-78",
-    Graph_color: "#00FFFF",
+    Graph_color: "#1C3052",
     StartLat: 0,
     StartLong: 0,
     EndLat: 0,
@@ -80,7 +80,7 @@ var truck3 = {
     Driverid: "003",
     Routename: "i-90",
     Routenumber: "i-90",
-    Graph_color: "#FF33CC",
+    Graph_color: "#1C3052",
     StartLat: 0,
     StartLong: 0,
     EndLat: 0,
@@ -102,7 +102,7 @@ var truck4 = {
     Driverid: "004",
     Routename: "i-99",
     Routenumber: "i-99",
-    Graph_color: "#FF0000",
+    Graph_color: "#1C3052",
     StartLat: 0,
     StartLong: 0,
     EndLat: 0,
@@ -836,15 +836,15 @@ function detailsInfo(d) {
     var headingwidth = 'col-md-5';
     var datagwidth = 'col-md-7';
     var html =
-        '<div class="panel panel-primary"><div class="panel-heading">Truck Info</div>'
+        '<div class="panel panel-eyera"><div class="panel-heading">Truck Info</div>'
             + '<div class="panel-body"><div class="row"><div class="' + headingwidth + '"><b>Truck Id.</b></div><div class="' + datagwidth + '">: ' + currentTruck.Trucknumber + '</div></div>'
             + '<div class="row"><div class="' + headingwidth + '"><b>Driver Name</b></div><div class="' + datagwidth + '">: ' + currentTruck.Drivername + '</div></div></div></div>'
-            + '<div class="panel panel-success"><div class="panel-heading">Current Location</div>'
+            + '<div class="panel panel-eyera"><div class="panel-heading">Current Location</div>'
             + '<div class="panel-body mylocationdiv"><div class="row"><div class="' + headingwidth + '"><b>Latitude</b></div><div class="' + datagwidth + '">: ' + d.Latitude + '</div></div>'
             + '<div class="row"><div class="' + headingwidth + '"><b>Longitude</b></div><div class="' + datagwidth + '">: ' + d.Longitude + '</div></div>'
             //+ '<div class="row"><div class="' + headingwidth + '"><b>Location</b></div><div class="' + datagwidth + '">: ' + d.Address + '</div></div>'
             + '</div></div>'
-            + '<div class="panel panel-info"><div class="panel-heading">Average Sensor Reading</div>'
+            + '<div class="panel panel-eyera"><div class="panel-heading">Average Sensor Reading</div>'
             + '<div class="panel-body">'
             + '<div class="row"><div class="' + headingwidth + '"><b>Co2</b></div><div class="' + datagwidth + '">: ' + d.Co2+ '</div></div>'
             + '<div class="row"><div class="' + headingwidth + '"><b>Moisture</b></div><div class="' + datagwidth + '">: ' + d.Moisture+ '</div></div>'
