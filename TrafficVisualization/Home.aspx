@@ -29,8 +29,6 @@
         </div>
     </div>
 
-    
-
     <div id="DemoDiv" style="display: none ;">
         <div class="row">
             <nav class="navbar navbar-default">
@@ -170,7 +168,8 @@
         </div>
     </div>
     </div>
-     <div id="StartDiv" style="text-align:center; padding-top:20px; display:none;color:#1C3052 ">
+
+    <div id="StartDiv" style="text-align:center; padding-top:20px; display:none;color:#1C3052 ">
          <div class="col-md-12">
              <p style="font-size: 17px; text-align: center; margin-top:70px ;font-weight: 600">This demo showcases the power of real time predictive analytics on Internet of Things data.</br>The business use case highlights the benefits of Predictive Maintenance for the trucking industry.</p>
          </div>
