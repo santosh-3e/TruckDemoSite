@@ -36,7 +36,7 @@ var truck1 = {
     Driverid: "001",
     Routename: "i-5",
     Routenumber: "i-5",
-    Graph_color: "#ff7f0e",
+    Graph_color: "#1C3052",
     StartLat: 0,
     StartLong: 0,
     EndLat: 0,
@@ -58,7 +58,7 @@ var truck2 = {
     Driverid: "002",
     Routename: "i-78",
     Routenumber: "i-78",
-    Graph_color: "#00FFFF",
+    Graph_color: "#1C3052",
     StartLat: 0,
     StartLong: 0,
     EndLat: 0,
@@ -80,7 +80,7 @@ var truck3 = {
     Driverid: "003",
     Routename: "i-90",
     Routenumber: "i-90",
-    Graph_color: "#FF33CC",
+    Graph_color: "#1C3052",
     StartLat: 0,
     StartLong: 0,
     EndLat: 0,
@@ -102,7 +102,7 @@ var truck4 = {
     Driverid: "004",
     Routename: "i-99",
     Routenumber: "i-99",
-    Graph_color: "#FF0000",
+    Graph_color: "#1C3052",
     StartLat: 0,
     StartLong: 0,
     EndLat: 0,
@@ -121,9 +121,7 @@ var datafeeder = {
     StartProcess: false,
     IsPositiveFeeds: false
 };
-
 var StartRealTimeDashboard = false;
-
 var counter = 0;
 $(document).ready(function () {
     $("#mystartbtn").hide();
@@ -146,71 +144,98 @@ $(document).ready(function () {
       
         return false;
     });
+
+    var tour1 = new Tour({
+        steps: [
+            {
+                element: "#divSafe",
+                title: "Predictions Based On Sensor Readings",
+                content: "Machine Learning scoring of data in real time to determine if the food would go bad in next 4 hours",
+                placement: "bottom",
+                onNext: function () {
+                    setTimeout(function() {
+                        tour1.end();
+                    },500);
+                }
+            },
+             {
+                 element: "#divSafe",
+                 title: "Predictions Based On Sensor Readings",
+                 content: "Machine Learning scoring of data in real time to determine if the food would go bad in next 4 hours",
+                 placement: "bottom"
+             }
+        ],
+        animation: true,
+        container: "body",
+        backdrop: false,
+        storage: false,
+        template: "<div class='popover tour'><div class='arrow'></div><h3 class='popover-title'></h3><div class='popover-content'></div><div class='popover-navigation'><button class='btn btn-info btn-xs' data-role='next'>End Tour</button></div></div>"
+    });
+
+
     var tour = new Tour({
         steps: [
         {
             element: "#mystartbtn",
             title: "Start/Stop Demo",
             content: "Start/Stop the demo by clicking here.",
-            placement: "bottom"
+            placement: "bottom",
         },
         {
             element: "#truck1_link",
             title: "Truck Information",
-            content: "Each Truck is carrying different types of food.",
+            content: "Each truck is carrying a different type of perishable food.",
             placement: "bottom"
         },
         {
             element: ".mylocationdiv",
             title: "Current Location Information",
-            content: "Latitude & longitude information emitted by each of the trucks is computed into its geographical location in real time."
+            content: "Latitude & longitude information extracted from each truck’s data is used to compute its geographical location in real time."
         },
         {
             element: "#chart3",
             title: "Truck Sensor Details",
             html: "true",
-            content: "Data from 6 types of sensors installed in each truck being displayed in real time<br />1.Carbon-di-oxide<br />2.Oxygen<br />3.Moisture<br />4.Ethylene<br />5.Pressure<br />6.Temperature",
+            content: "Six different types of sensors installed in the trucks that display their data in real time.",
             placement: "top"
         },
-            {
+        {
                 element: "#divSafe",
                 title: "Predictions Based On Sensor Readings",
-                content: "Machine learning algorithms score sensor data to determine food safety in real time.",
+                content: "Machine learning algorithms score the six types of sensor data in real time to determine perishability of each kind of food.",
                 placement: "bottom",
-                onNext: function () {
-                    $('#btnChangeData').bootstrapSwitch("state", true, true);
-                }
-            },
-
+                onNext: function() {
+                $('#btnChangeData').bootstrapSwitch("state", true, true);
+            }
+        },
         {
             element: "#adversebutton",
             title: "Control Positive or Adverse condition",
             content: "Send data for good or adverse or conditions by clicking here.",
-            placement: "bottom"
+            placement: "bottom",
+            onNext: function () {
+                tour.end();
+                tour1.init();
+                tour1.start();
+            }
         },
-
-            {
-                element: "#divSafe",
-                title: "Predictions Based On Sensor Readings",
-                content: "Machine Learning scoring of data in real time to determine if the food would go bad in next 4 hours",
-                placement: "bottom"
-            },
-
-        //{
-        //    element: "#divSafe",
-        //    title: "",
-        //    content: "Machine Learning has scored the data in real time and determined that the [food type]will go bad in next 4 hours.<br>The Trucking company can now take corrective actions to stop the [food type] from going bad.",
-        //    placement: "bottom"
-        //}
+        {
+            element: "#divSafe222",
+            title: "Predictions Based On Sensor Readings",
+            content: "Machine learning algorithms have determined in real time that the food in a particular truck will perish in next 4 hours. ",
+            placement: "bottom"
+        }
         ],
         animation: true,
         container: "body",
         backdrop: false,
-        storage: false
+        storage: false,
+        template: "<div class='popover tour'> <div class='arrow'></div><h3 class='popover-title'></h3><div class='popover-content'></div><div class='popover-navigation'><button class='btn btn-info btn-xs' style='margin-bottom:5px' data-role='next'>Next »</button></div></div>"
     });
     // Initialize the tour
     tour.init();
 
+ 
    // try {
     $("[btn='toggleBtn']").bootstrapSwitch();
     $('#resetDashboard').on('switchChange.bootstrapSwitch', function (event, state) {
@@ -303,8 +328,6 @@ $(document).ready(function () {
     }, interval);
 });
 
-
-
 function showMessage(message) {
 
     $.growl({
@@ -343,9 +366,10 @@ function CallHBaseApi() {
         counter++;
         IsFetchingTruckData = false;
         $.each(data1, function (index, d) {
-           
+            d.FLatitude = parseFloat(d.Latitude).toFixed(4);
+            d.FLongitude = parseFloat(d.Longitude).toFixed(4);
             try {
-                
+               
                 if (d.TruckID === "946891911") {
                    
                     if (truck1.StartLat === 0) {
@@ -535,6 +559,7 @@ function CallHBaseApi() {
                     }
                   
                     var line = new Microsoft.Maps.Polyline(currentTruck.geolLocations.sort(function(obj1, obj2) { return obj1.latitude - obj2.latitude; }));
+                    //var line = new Microsoft.Maps.Polyline(currentTruck.geolLocations);
                     map.entities.clear(); // = [];
 
                     map.setView({ center: locend, zoom: lastZoomLevel });
@@ -587,7 +612,7 @@ function displayDownCharts(d) {
         if (d.ScoreLabel == 1) {
             paneltype = 'panel-danger';
             background = "bg-danger";
-            message = "<strong>" + currentTruck.ProductName + " would go <div style='display:inline-block;background-color:#DD0000;color:white'> BAD </div> in next 4 hours</strong>.<br>-Prediction is based on the current sensor readings.";
+            message = "<strong>" + currentTruck.ProductName + " would <div style='display:inline-block;background-color:#DD0000;color:white'> PERISH  </div> in next 4 hours</strong>.<br>-Prediction is based on the current readings of six sensors data.";
         }
 
         $("#score_prediction")
@@ -604,11 +629,17 @@ function displayDownCharts(d) {
                 + '<div class="row"><div class="' + headingwidth + '"><b>Temperature</b></div><div class="' + datagwidth + '">: ' + d.Temperature + '</div></div>'
                 + '<hr/><div class="row"><div class="col-md-12"><div id="divSafe"><span class="list-group-item"" style="background-color:#90B0D4; text-align:center" >' + message + '</span></div></div></div>'
                 + '</div></div></div>'
+                + '<div class="panel ' + paneltype + '">'
+                + '<div class="panel-body ' + background + '">'
+                + '<div class="row"><div class="col-md-12"><div id="maintanance">Predictive Maintenance results in huge cost savings for the Trucking industry.</br><a href="http://thirdeyecss.com/eyera">Learn More</a></div></div></div>'
             );
 
         nv.addGraph(graph(d));
     }
+
 }
+
+
 
 function graph(d) {
 
@@ -806,17 +837,16 @@ function graph(d) {
 function detailsInfo(d) {
     var headingwidth = 'col-md-5';
     var datagwidth = 'col-md-7';
-
     var html =
-        '<div class="panel panel-primary"><div class="panel-heading">Truck Info</div>'
+        '<div class="panel panel-eyera"><div class="panel-heading">Truck Info</div>'
             + '<div class="panel-body"><div class="row"><div class="' + headingwidth + '"><b>Truck Id.</b></div><div class="' + datagwidth + '">: ' + currentTruck.Trucknumber + '</div></div>'
             + '<div class="row"><div class="' + headingwidth + '"><b>Driver Name</b></div><div class="' + datagwidth + '">: ' + currentTruck.Drivername + '</div></div></div></div>'
-            + '<div class="panel panel-success"><div class="panel-heading">Current Location</div>'
-            + '<div class="panel-body mylocationdiv"><div class="row"><div class="' + headingwidth + '"><b>Latitude</b></div><div class="' + datagwidth + '">: ' + d.Latitude + '</div></div>'
-            + '<div class="row"><div class="' + headingwidth + '"><b>Longitude</b></div><div class="' + datagwidth + '">: ' + d.Longitude + '</div></div>'
+            + '<div class="panel panel-eyera"><div class="panel-heading">Current Location</div>'
+            + '<div class="panel-body mylocationdiv"><div class="row"><div class="' + headingwidth + '"><b>Latitude</b></div><div class="' + datagwidth + '">: ' + d.FLatitude + '</div></div>'
+            + '<div class="row"><div class="' + headingwidth + '"><b>Longitude</b></div><div class="' + datagwidth + '">: ' + d.FLongitude + '</div></div>'
             //+ '<div class="row"><div class="' + headingwidth + '"><b>Location</b></div><div class="' + datagwidth + '">: ' + d.Address + '</div></div>'
             + '</div></div>'
-            + '<div class="panel panel-info"><div class="panel-heading">Average Sensor Reading</div>'
+            + '<div class="panel panel-eyera"><div class="panel-heading">Average Sensor Reading</div>'
             + '<div class="panel-body">'
             + '<div class="row"><div class="' + headingwidth + '"><b>Co2</b></div><div class="' + datagwidth + '">: ' + d.Co2+ '</div></div>'
             + '<div class="row"><div class="' + headingwidth + '"><b>Moisture</b></div><div class="' + datagwidth + '">: ' + d.Moisture+ '</div></div>'
@@ -825,8 +855,8 @@ function detailsInfo(d) {
             + '<div class="row"><div class="' + headingwidth + '"><b>Pressure</b></div><div class="' + datagwidth + '">: ' + d.Pressure + '</div></div>'
             + '<div class="row"><div class="' + headingwidth + '"><b>Temperature</b></div><div class="' + datagwidth + '">: ' + d.Temperature + '</div></div>'
             + '</div></div>';
+           
     return html;
-    
 }
 
 function togglemap(e, truckId) {
@@ -868,3 +898,4 @@ function createDirections() {
         addWaypoint();
     }
 }
+
