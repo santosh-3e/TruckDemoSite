@@ -123,18 +123,18 @@ var datafeeder = {
 };
 var StartRealTimeDashboard = false;
 var counter = 0;
+
 $(document).ready(function () {
     $("#mystartbtn").hide();
     $("#adversebutton").hide();
 
     // Instance the tour
     $("#StartDiv").show();
-    $("#cmdSTartDemo").on("click", function () {
+    $("#cmdSTartDemo").on("click", function (){
         $("#DemoDiv").show();
         $("#StartDiv").hide();
         $("#mystartbtn").show();
         $("#adversebutton").show();
-       
 
         $('#resetDashboard').bootstrapSwitch("state", true, true);
         //Start the tour

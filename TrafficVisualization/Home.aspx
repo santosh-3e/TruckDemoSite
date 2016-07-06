@@ -139,39 +139,37 @@
   
     <div class="row">
         <div class="col-md-2">
-            <div id="chart1" class="chart chart1"  style="border:1px; background-color:white">
+            <div id="chart1" class="chart chart1"  style="border:1px;background-color:white; margin-top:20px">
                 <svg></svg>
             </div>
         </div>
         <div class="col-md-2">
-            <div id='chart2' class="chart chart2"  style="background-color:white">
+            <div id='chart2' class="chart chart2"  style="background-color:white; margin-top:20px">
                 <svg></svg>
             </div>
         </div>
         <div class="col-md-2">
-            <div id='chart3' class="chart chart3"  style="background-color:white">
+            <div id='chart3' class="chart chart3"  style="background-color:white; margin-top:20px">
                 <svg></svg>
             </div>
         </div>
         <div class="col-md-2">
-            <div id='chart4' class="chart chart4"  style="background-color:white">
+            <div id='chart4' class="chart chart4"  style="background-color:white; margin-top:20px">
                 <svg></svg>
             </div>
         </div>
         <div class="col-md-2">
-            <div id='chart5' class="chart chart5"  style="background-color:white">
+            <div id='chart5' class="chart chart5"  style="background-color:white; margin-top:31px">
                 <svg></svg>
             </div>
         </div>
         <div class="col-md-2">
-            <div id='chart6' class="chart chart6"  style="background-color:white">
+            <div id='chart6' class="chart chart6"  style="background-color:white ; margin-top:31px">
                 <svg></svg>
             </div>
         </div>
     </div>
     </div>
-   
-
      <div id="StartDiv" style="text-align:center; padding-top:20px; display:none;color:#1C3052 ">
          <div class="col-md-12">
              <p style="font-size: 17px; text-align: center; margin-top:70px ;font-weight: 600">This demo showcases the power of real time predictive analytics on Internet of Things data.</br>The business use case highlights the benefits of Predictive Maintenance for the trucking industry.</p>
