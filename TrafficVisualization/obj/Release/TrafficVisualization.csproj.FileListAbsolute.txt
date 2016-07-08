@@ -330,3 +330,7 @@ D:\ThirdEye\Connected Cars\TrafficVisualization\TrafficVisualization\TrafficVisu
 D:\ThirdEye\Connected Cars\TrafficVisualization\TrafficVisualization\TrafficVisualization\obj\Release\TrafficVisualization.csprojResolveAssemblyReference.cache
 D:\ThirdEye\Connected Cars\TrafficVisualization\TrafficVisualization\TrafficVisualization\obj\Release\TrafficVisualization.dll
 D:\ThirdEye\Connected Cars\TrafficVisualization\TrafficVisualization\TrafficVisualization\obj\Release\TrafficVisualization.pdb
+D:\ThirdEye\Connected Cars\TrafficVisualization\TrafficVisualization\TrafficVisualization\bin\Microsoft.WindowsAzure.Storage.dll
+D:\ThirdEye\Connected Cars\TrafficVisualization\TrafficVisualization\TrafficVisualization\bin\Microsoft.Data.Edm.dll
+D:\ThirdEye\Connected Cars\TrafficVisualization\TrafficVisualization\TrafficVisualization\bin\Microsoft.Data.Services.Client.dll
+D:\ThirdEye\Connected Cars\TrafficVisualization\TrafficVisualization\TrafficVisualization\bin\Microsoft.Data.OData.dll
